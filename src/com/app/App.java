@@ -1,7 +1,7 @@
 package com.app;
 
 import com.gui.*;
-
+import com.util.Equation;
 import javax.swing.*;
 
 public class App {
@@ -15,6 +15,5 @@ public class App {
         gameWindow.changePanel("mainMenu");
         gameWindow.pack();
     }
-
 
 }

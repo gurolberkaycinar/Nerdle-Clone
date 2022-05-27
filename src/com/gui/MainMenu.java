@@ -8,6 +8,7 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.GroupLayout;
+import javax.swing.event.*;
 
 import static com.app.App.gameWindow;
 
@@ -27,6 +28,12 @@ public class MainMenu {
     private void exit(ActionEvent e) {
         gameWindow.dispose();
     }
+
+    private void unfinishedCaretUpdate(CaretEvent e) {
+        // TODO add your code here
+    }
+
+
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
@@ -82,6 +89,7 @@ public class MainMenu {
 
             //---- unfinished ----
             unfinished.setText("15");
+            unfinished.addCaretListener(e -> unfinishedCaretUpdate(e));
 
             //---- test ----
             test.setText("Test");
@@ -164,8 +172,19 @@ public class MainMenu {
                     .addGroup(panelLayout.createSequentialGroup()
                         .addGap(26, 26, 26)
                         .addComponent(Title, GroupLayout.PREFERRED_SIZE, 91, GroupLayout.PREFERRED_SIZE)
-                        .addGroup(panelLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
-                            .addGroup(GroupLayout.Alignment.LEADING, panelLayout.createSequentialGroup()
+                        .addGroup(panelLayout.createParallelGroup()
+                            .addGroup(panelLayout.createSequentialGroup()
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(newGame, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(continueGame, GroupLayout.PREFERRED_SIZE, 88, GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(test, GroupLayout.PREFERRED_SIZE, 58, GroupLayout.PREFERRED_SIZE)
+                                .addGap(47, 47, 47)
+                                .addComponent(exit, GroupLayout.PREFERRED_SIZE, 73, GroupLayout.PREFERRED_SIZE)
+                                .addGap(25, 25, 25)
+                                .addComponent(label1))
+                            .addGroup(panelLayout.createSequentialGroup()
                                 .addGap(83, 83, 83)
                                 .addComponent(label2)
                                 .addGap(14, 14, 14)
@@ -188,18 +207,7 @@ public class MainMenu {
                                 .addGroup(panelLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                                     .addComponent(duration, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
                                     .addComponent(label7))
-                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 236, Short.MAX_VALUE))
-                            .addGroup(panelLayout.createSequentialGroup()
-                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
-                                .addComponent(newGame, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(continueGame, GroupLayout.PREFERRED_SIZE, 88, GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(test, GroupLayout.PREFERRED_SIZE, 58, GroupLayout.PREFERRED_SIZE)
-                                .addGap(47, 47, 47)
-                                .addComponent(exit, GroupLayout.PREFERRED_SIZE, 73, GroupLayout.PREFERRED_SIZE)
-                                .addGap(25, 25, 25)))
-                        .addComponent(label1))
+                                .addContainerGap())))
             );
         }
         // JFormDesigner - End of component initialization  //GEN-END:initComponents

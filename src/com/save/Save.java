@@ -1,4 +1,5 @@
 package com.save;
 
-public class Save {
+public class Save implements java.io.Serializable {
+
 }
