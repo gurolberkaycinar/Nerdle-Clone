@@ -1,0 +1,96 @@
+JFDML JFormDesigner: "7.0.5.4.420" Java: "11.0.14.1" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq l {par l {comp label1:::p::p, seq l {space :71:71:p, par l {comp exit::l:p:192:p, seq l {comp newGame:::p:231:p, space :p:129:p, comp label2:::p::p}, par t:l::p {comp test::l::231:x, comp continueGame::l::231:x}}}}, space :::x, par t {par t:t::p {seq {comp label4:::p::p, space :::x, comp lost:::p::p}, seq {comp label3:::p::p, space :::x, comp unfinished:::p::p}, seq t {comp label5:::p::p, space :::x, comp won:::p::p}, seq t {comp label7:::p::p, space s:::p, comp duration:::p::p}}, seq t {comp label6:::p::p, space s:::p, comp guesses:::p::p}}, space :p:157:p}, comp Title::l:::x}"
+			"$verticalGroup": "par l {seq l {space :p:26:p, comp Title:::p:91:p, par t {seq l {space :p:83:p, comp label2:::p::p, space :p:14:p, par b {comp unfinished::b:p:22:p, comp label3::b:p::p}, space :::p, par b {comp lost::b:p:22:p, comp label4::b:p::p}, space :::p, par b {comp won::b:p:22:p, comp label5::b:p::p}, space :::p, par b {comp guesses::b:p:22:p, comp label6::b:p::p}, space :::p, par b {comp duration::b:p:22:p, comp label7::b:p::p}, space ::236:x}, seq t {space ::68:x, comp newGame:::p:90:p, space s:::p, comp continueGame:::p:88:p, space s:::p, comp test:::p:58:p, space :p:47:p, comp exit:::p:73:p, space :p:25:p}}, comp label1:::p::p}}"
+		} ) {
+			name: "panel"
+			"preferredSize": new java.awt.Dimension( 800, 560 )
+			"cursor": new java.awt.Cursor( 12 )
+			"alignmentX": 0.0f
+			"alignmentY": 0.0f
+			"maximumSize": new java.awt.Dimension( 800, 560 )
+			"minimumSize": new java.awt.Dimension( 800, 560 )
+			"border": sfield com.jformdesigner.model.FormObject NULL_VALUE
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "Title"
+				"text": "Welcome to Nerdle!"
+				"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 32, false )
+				"horizontalAlignment": 0
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label1"
+				"text": "20011009 - Gürol Berkay Çınar"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "newGame"
+				"text": "New Game"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "continueGame"
+				"text": "Continue"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "exit"
+				"text": "Exit"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "exit", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label2"
+				"text": "Stats:"
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "unfinished"
+				"text": "15"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "test"
+				"text": "Test"
+				"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 5, false )
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "test", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "lost"
+				"text": "15"
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "won"
+				"text": "15"
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "guesses"
+				"text": "15"
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "duration"
+				"text": "15"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label3"
+				"text": "Games left unfinished: "
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label4"
+				"text": "Games lost: "
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label5"
+				"text": "Games won: "
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label6"
+				"text": "Average guesses for a win: "
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label7"
+				"text": "Average duration of a win: "
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 760, 620 )
+		} )
+	}
+}
