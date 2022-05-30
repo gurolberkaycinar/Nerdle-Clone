@@ -1,45 +1,17 @@
 package com.util;
 
-import static java.util.Arrays.copyOfRange;
-
 public class EquationUtil {
     public String generateEquation() {
-        /*
-        char[] set = {'0', '1', '2' , '3', '4', '5' ,'6' ,'7', '8', '9', '+', '-', '*', '/'};
-        int pos;
-        int size;
-        char[] arr = new char[9];
-        do {
-            pos = 2 + (int)(Math.random() * 3);
-            size =  7 + (int)(Math.random() * 3);
-            arr[0] = set[(int)(Math.random() * 10)];
-            for(int i = 1; i < size - pos; i++) {
-                if(arr[i-1] < '0' || arr[i-1] > '9') {
-                    arr[i] = set[(int)(Math.random() * 10)];
-                } else {
-                    arr[i] = set[(int)(Math.random() * 14)];
-                }
-            }
-            arr[size - pos] = '=';
-            for(int i = size - pos + 1; i < size; i++) {
-                arr[i] = set[(int)(Math.random() * 10)];
-            }
-            //System.out.println(new String(arr).substring(0, size));
-        } while(!isValid(new String(arr).substring(0, size)));
-        //System.out.println(new String(arr));
-        return new String(arr);
-        */
-
         char[] set = {'0', '1', '2' , '3', '4', '5' ,'6' ,'7', '8', '9', '+', '-', '*', '/'};
         int equalPos;
         int i;
         int counter = 0;
-        char[] arr = new char[9];
+        char[] arr;
         String str;
         String rightSide;
         do {
             arr = new char[9];
-            equalPos = 4 + (int) (Math.random() * 3);
+            equalPos = 2 + (int) (Math.random() * 5);
             arr[0] = set[(int)(Math.random() * 10)];
             for(i = 1; i < equalPos; i++) {
                 if(arr[i-1] < '0' || arr[i-1] > '9') {
@@ -52,14 +24,16 @@ public class EquationUtil {
                 }
             }
             arr[i] = set[1 + (int)(Math.random() * 9)];
-            System.out.println("haha " + new String(arr).substring(0, equalPos + 1));
             rightSide = Integer.toString(calculateEquation(new String(arr).substring(0, equalPos + 1)));
             str = new String(arr).substring(0, equalPos + 1);
             str += '=' + rightSide;
+            System.out.println("==============");
             System.out.println(str);
             counter++;
         } while(!isValid(str));
+        System.out.println("==============");
         System.out.println("Took " + counter + " tries ");
+        System.out.println("==============");
         return str;
     }
 
@@ -67,6 +41,8 @@ public class EquationUtil {
 
 
     public boolean isValid(String str) {
+        boolean hasOperand = false;
+
         // Size
         if(str.length() < 7 || str.length() > 9) {
             System.out.println("Length invalid");
@@ -88,19 +64,28 @@ public class EquationUtil {
             return false;
         }
 
-        if(!(arr[equalIndex + 1] >= '1' && arr[equalIndex + 1] <= '9') || !(arr[str.length() - 1] >= '0' && arr[str.length() - 1] <= '9')) {
+        if(!((arr[equalIndex + 1] >= '1' && arr[equalIndex + 1] <= '9') || arr[equalIndex + 1] == '-') || !(arr[str.length() - 1] >= '0' && arr[str.length() - 1] <= '9')) {
             System.out.println("Illegal start or finish after =");
             return false;
         }
 
         for(int i = 0; i < str.length(); i++) {
-            if((arr[i] < '0' || arr[i] > '9') && (arr[i + 1] < '0' || arr[i + 1] > '9')) {
+            if((arr[i] < '0' || arr[i] > '9') && (arr[i + 1] < '0' || arr[i + 1] > '9') && i < equalIndex) {
                 System.out.println("2 operands in a row");
                 return false;
             }
             if(arr[i] == '0' && arr[i - 1] == '/') {
                 System.out.println("Divie by 0");
                 return false;
+            }
+
+            if(i < str.length() - 1 && arr[i] == '0' && (arr[i + 1] >= '0' && arr[i + 1] <= '9')) {
+                System.out.println("Leading 0");
+                return false;
+            }
+
+            if((arr[i] < '0' || arr[i] > '9') && arr[i] != '=') {
+                hasOperand = true;
             }
         }
 
@@ -109,13 +94,13 @@ public class EquationUtil {
             return false;
         }
 
-        return true;
+        return hasOperand;
     }
 
     public int calculateEquation(String str) {
         char[] arr = str.toCharArray();
         char last = '0';
-        char[] tmp = new char[9];
+        char[] tmp;
         int j = 0;
         int i;
         int sum = 0;
@@ -133,7 +118,11 @@ public class EquationUtil {
                             } else if(last == '*') {
                                 sum *= Integer.parseInt(new String(tmp));
                             } else {
-                                sum /= Integer.parseInt(new String(tmp));
+                                if(sum % Integer.parseInt(new String(tmp)) != 0) {
+                                    sum = 9999999;
+                                } else {
+                                    sum /= Integer.parseInt(new String(tmp));
+                                }
                             }
                         }else if(!(new String(tmp).equals(""))){
                             sum = Integer.parseInt(new String(tmp));
@@ -143,7 +132,7 @@ public class EquationUtil {
             }
         }
         if(last == '0') {
-            return Integer.parseInt(new String(str));
+            return Integer.parseInt(str);
         }
         tmp = new String(arr).substring(j, i).toCharArray();
         if(last == '+') {
@@ -153,7 +142,11 @@ public class EquationUtil {
         } else if(last == '*') {
             sum *= Integer.parseInt(new String(tmp));
         } else {
-            sum /= Integer.parseInt(new String(tmp));
+            if(sum % Integer.parseInt(new String(tmp)) != 0) {
+                sum = 9999999;
+            } else {
+                sum /= Integer.parseInt(new String(tmp));
+            }
         }
         return sum;
     }
