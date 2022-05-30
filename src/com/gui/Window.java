@@ -13,10 +13,12 @@ import javax.swing.GroupLayout;
 public class Window extends JFrame {
     JPanel mainMenu;
     JPanel testScreen;
+    JPanel gameScreen;
     public Window() {
         initComponents();
         mainMenu = new MainMenu().getPanel();
         testScreen = new TestScreen().getPanel();
+        gameScreen = new GameScreen().getPanel();
     }
 
     private void initComponents() {
@@ -46,7 +48,7 @@ public class Window extends JFrame {
         } else if (choice.equals("testScreen")) {
             this.setContentPane(testScreen);
         } else {
-            this.setContentPane(mainMenu);
+            this.setContentPane(gameScreen);
         }
         this.pack();
         this.setLocationRelativeTo(null);

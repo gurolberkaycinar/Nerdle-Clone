@@ -4,8 +4,8 @@ new FormModel {
 	contentType: "form/swing"
 	root: new FormRoot {
 		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-			"$horizontalGroup": "par l {seq l {par l {comp label1:::p::p, seq l {space :71:71:p, par l {comp exit::l:p:192:p, seq l {comp newGame:::p:231:p, space :p:129:p, comp label2:::p::p}, par t:l::p {comp test::l::231:x, comp continueGame::l::231:x}}}}, space :::x, par t {par t:t::p {seq {comp label4:::p::p, space :::x, comp lost:::p::p}, seq {comp label3:::p::p, space :::x, comp unfinished:::p::p}, seq t {comp label5:::p::p, space :::x, comp won:::p::p}, seq t {comp label7:::p::p, space s:::p, comp duration:::p::p}}, seq t {comp label6:::p::p, space s:::p, comp guesses:::p::p}}, space :p:157:p}, comp Title::l:::x}"
-			"$verticalGroup": "par l {seq l {space :p:26:p, comp Title:::p:91:p, par l {seq l {space :::x, comp newGame:::p:90:p, space s:::p, comp continueGame:::p:88:p, space s:::p, comp test:::p:58:p, space :p:47:p, comp exit:::p:73:p, space :p:25:p, comp label1:::p::p}, seq l {space :p:83:p, comp label2:::p::p, space :p:14:p, par b {comp unfinished::b:p:22:p, comp label3::b:p::p}, space :::p, par b {comp lost::b:p:22:p, comp label4::b:p::p}, space :::p, par b {comp won::b:p:22:p, comp label5::b:p::p}, space :::p, par b {comp guesses::b:p:22:p, comp label6::b:p::p}, space :::p, par b {comp duration::b:p:22:p, comp label7::b:p::p}, space :::x}}}}"
+			"$horizontalGroup": "par l {seq l {par l {comp label1:::p::p, seq l {space :71:71:p, par l {seq l {comp newGame:::p:231:p, space :p:129:p, comp label2:::p::p}, par t:l::p {comp test::l::231:x, comp continueGame::l::231:x}, comp exit::l:p:152:p}}}, space :::x, par t {par t:l::p {seq l {comp label5:::p::p, space :::x, comp won:::p:58:p}, seq l {comp label4:::p::p, space :::x, comp lost:::p:58:p}, seq l {comp label3:::p::p, space :p:51:p, comp unfinished:::p:58:p}}, par l:t::p {seq {comp label6:::p::p, space :::x, comp guess:::p:58:p}, seq t {comp label7:::p::p, space :p:24:p, comp duration:::p:58:p}}}, space :p:142:p}, seq t {comp Title:::::x, space :::p}}"
+			"$verticalGroup": "par l {seq {space :::p, comp Title:::p:91:p, par l {seq {space :::x, comp newGame:::p:90:p, space s:::p, comp continueGame:::p:88:p, space s:::p, comp test:::p:58:p, space :p:47:p, comp exit:::p:55:p, space :p:43:p, comp label1:::p::p}, seq l {space :p:103:p, comp label2:::p::p, space :p:15:p, par b {comp label3::b:p::p, comp unfinished::b:p::p}, space :::p, par b {comp label4::b:p::p, comp lost::b:p::p}, space :::p, par b {comp label5::b:p::p, comp won::b:p::p}, space :::p, par b {comp guess::b:p::p, comp label6::b:p::p}, space :::p, par b {comp label7::b:p::p, comp duration::b:p::p}, space :::x}}}}"
 		} ) {
 			name: "panel"
 			"preferredSize": new java.awt.Dimension( 800, 560 )
@@ -15,11 +15,13 @@ new FormModel {
 			"maximumSize": new java.awt.Dimension( 800, 560 )
 			"minimumSize": new java.awt.Dimension( 800, 560 )
 			"border": sfield com.jformdesigner.model.FormObject NULL_VALUE
+			"background": new java.awt.Color( 38, 70, 83, 255 )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "Title"
 				"text": "Welcome to Nerdle!"
 				"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 32, false )
 				"horizontalAlignment": 0
+				"background": new java.awt.Color( 60, 108, 186, 255 )
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "label1"
@@ -28,46 +30,32 @@ new FormModel {
 			add( new FormComponent( "javax.swing.JButton" ) {
 				name: "newGame"
 				"text": "New Game"
+				"background": new java.awt.Color( 42, 157, 143, 255 )
+				"foreground": new java.awt.Color( 255, 51, 51, 255 )
+				"border": new javax.swing.border.BevelBorder( 0, new java.awt.Color( 42, 157, 143, 255 ), null, null, null )
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "newGame", true ) )
 			} )
 			add( new FormComponent( "javax.swing.JButton" ) {
 				name: "continueGame"
 				"text": "Continue"
+				"background": new java.awt.Color( 42, 157, 143, 255 )
 			} )
 			add( new FormComponent( "javax.swing.JButton" ) {
 				name: "exit"
 				"text": "Exit"
+				"background": new java.awt.Color( 42, 157, 143, 255 )
 				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "exit", true ) )
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "label2"
 				"text": "Stats:"
 			} )
-			add( new FormComponent( "javax.swing.JTextField" ) {
-				name: "unfinished"
-				"text": "15"
-				addEvent( new FormEvent( "javax.swing.event.CaretListener", "caretUpdate", "unfinishedCaretUpdate", true ) )
-			} )
 			add( new FormComponent( "javax.swing.JButton" ) {
 				name: "test"
 				"text": "Test"
 				"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 5, false )
+				"background": new java.awt.Color( 42, 157, 143, 255 )
 				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "test", true ) )
-			} )
-			add( new FormComponent( "javax.swing.JTextField" ) {
-				name: "lost"
-				"text": "15"
-			} )
-			add( new FormComponent( "javax.swing.JTextField" ) {
-				name: "won"
-				"text": "15"
-			} )
-			add( new FormComponent( "javax.swing.JTextField" ) {
-				name: "guesses"
-				"text": "15"
-			} )
-			add( new FormComponent( "javax.swing.JTextField" ) {
-				name: "duration"
-				"text": "15"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "label3"
@@ -89,9 +77,29 @@ new FormModel {
 				name: "label7"
 				"text": "Average duration of a win: "
 			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "unfinished"
+				"text": "text"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "lost"
+				"text": "text"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "won"
+				"text": "text"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "guess"
+				"text": "text"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "duration"
+				"text": "text"
+			} )
 		}, new FormLayoutConstraints( null ) {
 			"location": new java.awt.Point( 0, 0 )
-			"size": new java.awt.Dimension( 810, 480 )
+			"size": new java.awt.Dimension( 835, 520 )
 		} )
 	}
 }

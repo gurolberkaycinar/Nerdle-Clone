@@ -16,7 +16,7 @@ public class App {
         gameWindow.pack();
 
         //System.out.println(new EquationUtil().isValid("3/3*2-1=0"));
-        System.out.println(new EquationUtil().generateEquation());
+        //System.out.println(new EquationUtil().generateEquation());
         //System.out.println(new EquationUtil().calculateEquation("6*164"));
     }
 
