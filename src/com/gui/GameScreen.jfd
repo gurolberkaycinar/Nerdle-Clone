@@ -3,910 +3,121 @@ JFDML JFormDesigner: "7.0.5.4.420" Java: "11.0.14.1" encoding: "UTF-8"
 new FormModel {
 	contentType: "form/swing"
 	root: new FormRoot {
-		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-			"$horizontalGroup": "par l {seq l {space :p:17:p, par l:::p {par l {seq {comp label37:::p:86:p, space :12:12:p, comp label45:::p:86:p, space :12:12:p, comp label44:::p:86:p, space :12:12:p, comp label43:::p:86:p, space :12:12:p, comp label42:::p:86:p, space :12:12:p, comp label41:::p:86:p, space :12:12:p, comp label40:::p:86:p, space :12:12:p, comp label39:::p:86:p, space :12:12:p, comp label38:::p:86:p}, par t {seq {comp label28:::p:86:p, space :12:12:p, comp label36:::p:86:p, space :12:12:p, comp label35:::p:86:p, space :12:12:p, comp label34:::p:86:p, space :12:12:p, comp label33:::p:86:p, space :12:12:p, comp label32:::p:86:p, space :12:12:p, comp label31:::p:86:p, space :12:12:p, comp label30:::p:86:p, space :12:12:p, comp label29:::p:86:p}, par l {seq {comp label19:::p:86:p, space :12:12:p, comp label27:::p:86:p, space :12:12:p, comp label26:::p:86:p, space :12:12:p, comp label25:::p:86:p, space :12:12:p, comp label24:::p:86:p, space :12:12:p, comp label23:::p:86:p, space :12:12:p, comp label22:::p:86:p, space :12:12:p, comp label21:::p:86:p, space :12:12:p, comp label20:::p:86:p}, par t {seq {comp label10:::p:86:p, space :12:12:p, comp label18:::p:86:p, space :12:12:p, comp label17:::p:86:p, space :12:12:p, comp label16:::p:86:p, space :12:12:p, comp label15:::p:86:p, space :12:12:p, comp label14:::p:86:p, space :12:12:p, comp label13:::p:86:p, space :12:12:p, comp label12:::p:86:p, space :12:12:p, comp label11:::p:86:p}, seq {comp label1:::p:86:p, space u:::p, comp label2:::p:86:p, space u:::p, comp label3:::p:86:p, space u:::p, comp label4:::p:86:p, space u:::p, comp label5:::p:86:p, space u:::p, comp label6:::p:86:p, space u:::p, comp label7:::p:86:p, space u:::p, comp label8:::p:86:p, space u:::p, comp label9:::p:86:p}}}}, seq t {comp label46:::p:86:p, space :12:12:p, comp label54:::p:86:p, space :12:12:p, comp label53:::p:86:p, space :12:12:p, comp label52:::p:86:p, space :12:12:p, comp label51:::p:86:p, space :12:12:p, comp label50:::p:86:p, space :12:12:p, comp label49:::p:86:p, space :12:12:p, comp label48:::p:86:p, space :12:12:p, comp label47:::p:86:p}}, seq l {par l:::p {seq l {comp label55:::p:86:p, space :12:12:p, comp label63:::p:86:p, space :12:12:p, comp label62:::p:86:p, space :12:12:p, comp label61:::p:86:p, space :12:12:p, comp label60:::p:86:p, space :12:12:p, comp label59:::p:86:p, space :12:12:p, comp label58:::p:86:p, space :12:12:p, comp label57:::p:86:p}, seq l {comp label64:::p:86:p, space :12:12:p, comp label72:::p:86:p, space :12:12:p, comp label71:::p:86:p, space :12:12:p, comp label70:::p:86:p, space :12:12:p, comp label69:::p:86:p, space :12:12:p, comp label68:::p:86:p, space :::x, comp label73:::p:86:p, space u:::p, comp label67:::p:86:p}}, space :p:12:p, par l {comp button1:::p:86:p, comp label56:::p:86:p}}}, space ::13:x}}"
-			"$verticalGroup": "par l {seq t {space :p:18:p, par b {comp label1::b:p:62:p, comp label2::b:p:62:p, comp label3::b:p:62:p, comp label4::b:p:62:p, comp label5::b:p:62:p, comp label6::b:p:62:p, comp label7::b:p:62:p, comp label8::b:p:62:p, comp label9::b:p:62:p}, space u:::p, par l {comp label10:::p:62:p, comp label18:::p:62:p, comp label17:::p:62:p, comp label16:::p:62:p, comp label15:::p:62:p, comp label14:::p:62:p, comp label13:::p:62:p, comp label12:::p:62:p, comp label11:::p:62:p}, space u:::p, par l {comp label19:::p:62:p, comp label27:::p:62:p, comp label26:::p:62:p, comp label25:::p:62:p, comp label24:::p:62:p, comp label23:::p:62:p, comp label22:::p:62:p, comp label21:::p:62:p, comp label20:::p:62:p}, space u:::p, par l {comp label28:::p:62:p, comp label36:::p:62:p, comp label35:::p:62:p, comp label34:::p:62:p, comp label33:::p:62:p, comp label32:::p:62:p, comp label31:::p:62:p, comp label30:::p:62:p, comp label29:::p:62:p}, space u:::p, par l {comp label37:::p:62:p, comp label45:::p:62:p, comp label44:::p:62:p, comp label43:::p:62:p, comp label42:::p:62:p, comp label41:::p:62:p, comp label40:::p:62:p, comp label39:::p:62:p, comp label38:::p:62:p}, space u:::p, par l {comp label46:::p:62:p, comp label54:::p:62:p, comp label53:::p:62:p, comp label52:::p:62:p, comp label51:::p:62:p, comp label50:::p:62:p, comp label49:::p:62:p, comp label48:::p:62:p, comp label47:::p:62:p}, space :p:43:p, par l {comp label55:::p:62:p, comp label63:::p:62:p, comp label62:::p:62:p, comp label61:::p:62:p, comp label60:::p:62:p, comp label59:::p:62:p, comp label58:::p:62:p, comp label57:::p:62:p, comp label56:::p:62:p}, space :::p, par l {comp label64:::p:62:p, comp label72:::p:62:p, comp label71:::p:62:p, comp label70:::p:62:p, comp label69:::p:62:p, comp label68:::p:62:p, comp button1::l:p:55:p, par b:l {comp label67::b:p:62:p, comp label73::b:p:62:p}}, space ::37:x}}"
-		} ) {
+		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
 			name: "panel"
-			"maximumSize": &Dimension0 new java.awt.Dimension( 900, 660 )
-			"minimumSize": &Dimension1 new java.awt.Dimension( 900, 660 )
-			"preferredSize": &Dimension2 new java.awt.Dimension( 900, 660 )
-			add( new FormComponent( "javax.swing.JButton" ) {
-				name: "button1"
-				"text": "Save and Return"
-				"border": &BevelBorder0 new javax.swing.border.BevelBorder( 1, null, null, null, null )
-				"horizontalTextPosition": 0
-				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "button1", true ) )
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label1"
-				"text": "text"
-				"background": &Color0 new java.awt.Color( 102, 255, 153, 255 )
-				"border": &EtchedBorder0 new javax.swing.border.EtchedBorder( 1, null, null )
-				"horizontalAlignment": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label2"
-				"text": "text"
-				"border": #EtchedBorder0
-				"horizontalAlignment": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label3"
-				"text": "text"
-				"border": #EtchedBorder0
-				"horizontalAlignment": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label4"
-				"text": "text"
-				"border": #EtchedBorder0
-				"horizontalAlignment": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label5"
-				"text": "text"
-				"border": #EtchedBorder0
-				"horizontalAlignment": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label6"
-				"text": "text"
-				"border": #EtchedBorder0
-				"horizontalAlignment": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label7"
-				"text": "text"
-				"border": #EtchedBorder0
-				"horizontalAlignment": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label8"
-				"text": "text"
-				"border": #EtchedBorder0
-				"horizontalAlignment": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label9"
-				"text": "text"
-				"border": #EtchedBorder0
-				"horizontalAlignment": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label10"
-				"text": "text"
-				"background": #Color0
-				"border": #EtchedBorder0
-				"horizontalAlignment": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label11"
-				"text": "text"
-				"border": #EtchedBorder0
-				"horizontalAlignment": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label12"
-				"text": "text"
-				"border": #EtchedBorder0
-				"horizontalAlignment": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label13"
-				"text": "text"
-				"border": #EtchedBorder0
-				"horizontalAlignment": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label14"
-				"text": "text"
-				"border": #EtchedBorder0
-				"horizontalAlignment": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label15"
-				"text": "text"
-				"border": #EtchedBorder0
-				"horizontalAlignment": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label16"
-				"text": "text"
-				"border": #EtchedBorder0
-				"horizontalAlignment": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label17"
-				"text": "text"
-				"border": #EtchedBorder0
-				"horizontalAlignment": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label18"
-				"text": "text"
-				"border": #EtchedBorder0
-				"horizontalAlignment": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label19"
-				"text": "text"
-				"background": #Color0
-				"border": #EtchedBorder0
-				"horizontalAlignment": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label20"
-				"text": "text"
-				"border": #EtchedBorder0
-				"horizontalAlignment": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label21"
-				"text": "text"
-				"border": #EtchedBorder0
-				"horizontalAlignment": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label22"
-				"text": "text"
-				"border": #EtchedBorder0
-				"horizontalAlignment": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label23"
-				"text": "text"
-				"border": #EtchedBorder0
-				"horizontalAlignment": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label24"
-				"text": "text"
-				"border": #EtchedBorder0
-				"horizontalAlignment": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label25"
-				"text": "text"
-				"border": #EtchedBorder0
-				"horizontalAlignment": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label26"
-				"text": "text"
-				"border": #EtchedBorder0
-				"horizontalAlignment": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label27"
-				"text": "text"
-				"border": #EtchedBorder0
-				"horizontalAlignment": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label28"
-				"text": "text"
-				"background": #Color0
-				"border": #EtchedBorder0
-				"horizontalAlignment": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label29"
-				"text": "text"
-				"border": #EtchedBorder0
-				"horizontalAlignment": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label30"
-				"text": "text"
-				"border": #EtchedBorder0
-				"horizontalAlignment": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label31"
-				"text": "text"
-				"border": #EtchedBorder0
-				"horizontalAlignment": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label32"
-				"text": "text"
-				"border": #EtchedBorder0
-				"horizontalAlignment": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label33"
-				"text": "text"
-				"border": #EtchedBorder0
-				"horizontalAlignment": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label34"
-				"text": "text"
-				"border": #EtchedBorder0
-				"horizontalAlignment": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label35"
-				"text": "text"
-				"border": #EtchedBorder0
-				"horizontalAlignment": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label36"
-				"text": "text"
-				"border": #EtchedBorder0
-				"horizontalAlignment": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label37"
-				"text": "text"
-				"background": #Color0
-				"border": #EtchedBorder0
-				"horizontalAlignment": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label38"
-				"text": "text"
-				"border": #EtchedBorder0
-				"horizontalAlignment": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label39"
-				"text": "text"
-				"border": #EtchedBorder0
-				"horizontalAlignment": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label40"
-				"text": "text"
-				"border": #EtchedBorder0
-				"horizontalAlignment": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label41"
-				"text": "text"
-				"border": #EtchedBorder0
-				"horizontalAlignment": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label42"
-				"text": "text"
-				"border": #EtchedBorder0
-				"horizontalAlignment": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label43"
-				"text": "text"
-				"border": #EtchedBorder0
-				"horizontalAlignment": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label44"
-				"text": "text"
-				"border": #EtchedBorder0
-				"horizontalAlignment": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label45"
-				"text": "text"
-				"border": #EtchedBorder0
-				"horizontalAlignment": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label46"
-				"text": "text"
-				"background": #Color0
-				"horizontalAlignment": 0
-				"border": #EtchedBorder0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label47"
-				"text": "text"
-				"horizontalAlignment": 0
-				"border": #EtchedBorder0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label48"
-				"text": "text"
-				"horizontalAlignment": 0
-				"border": #EtchedBorder0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label49"
-				"text": "text"
-				"horizontalAlignment": 0
-				"border": #EtchedBorder0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label50"
-				"text": "text"
-				"horizontalAlignment": 0
-				"border": #EtchedBorder0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label51"
-				"text": "text"
-				"horizontalAlignment": 0
-				"border": #EtchedBorder0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label52"
-				"text": "text"
-				"horizontalAlignment": 0
-				"border": #EtchedBorder0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label53"
-				"text": "text"
-				"horizontalAlignment": 0
-				"border": #EtchedBorder0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label54"
-				"text": "text"
-				"horizontalAlignment": 0
-				"border": #EtchedBorder0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label55"
-				"text": "0"
-				"background": #Color0
-				"border": #BevelBorder0
-				"horizontalTextPosition": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label56"
-				"text": "8"
-				"border": #BevelBorder0
-				"horizontalTextPosition": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label57"
-				"text": "7"
-				"border": #BevelBorder0
-				"horizontalTextPosition": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label58"
-				"text": "6"
-				"border": #BevelBorder0
-				"horizontalTextPosition": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label59"
-				"text": "5"
-				"border": #BevelBorder0
-				"horizontalTextPosition": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label60"
-				"text": "4"
-				"border": #BevelBorder0
-				"horizontalTextPosition": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label61"
-				"text": "3"
-				"border": #BevelBorder0
-				"horizontalTextPosition": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label62"
-				"text": "2"
-				"border": #BevelBorder0
-				"horizontalTextPosition": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label63"
-				"text": "1"
-				"border": #BevelBorder0
-				"horizontalTextPosition": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label64"
-				"text": "9"
-				"background": #Color0
-				"border": #BevelBorder0
-				"horizontalTextPosition": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label67"
-				"text": "Guess"
-				"border": #BevelBorder0
-				"horizontalTextPosition": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label68"
-				"text": "="
-				"border": #BevelBorder0
-				"horizontalTextPosition": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label69"
-				"text": "/"
-				"border": #BevelBorder0
-				"horizontalTextPosition": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label70"
-				"text": "*"
-				"border": #BevelBorder0
-				"horizontalTextPosition": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label71"
-				"text": "-"
-				"border": #BevelBorder0
-				"horizontalTextPosition": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label72"
-				"text": "+"
-				"border": #BevelBorder0
-				"horizontalTextPosition": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label73"
-				"text": "<-"
-				"border": #BevelBorder0
-				"horizontalTextPosition": 0
+			"maximumSize": new java.awt.Dimension( 900, 660 )
+			"minimumSize": new java.awt.Dimension( 900, 660 )
+			"preferredSize": new java.awt.Dimension( 900, 660 )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+				"$horizontalGroup": "par l {seq {space :p:33:p, par l {seq {comp button11:::p:75:p, space :6:6:p, comp button12:::p:75:p, space :6:6:p, comp button13:::p:75:p, space :6:6:p, comp button14:::p:75:p, space :6:6:p, comp button15:::p:75:p, space :::p, comp button16:::p:75:p, space u:::p, comp exitButton:::p:75:p}, seq {space :6:6:p, comp label55:::p::p}, seq l {comp button1:::p:75:p, space :::p, comp button2:::p:75:p, space :::p, comp button3:::p:75:p, space :6:6:p, comp button4:::p:75:p, space :::p, comp button5:::p:75:p, space :6:6:p, comp button6:::p:75:p, space :6:6:p, comp button7:::p:75:p, space :6:6:p, comp button8:::p:75:p, space :::p, comp button9:::p:75:p, space :6:6:p, comp button10:::p:75:p}}, space ::63:x}, seq t {space :::p, comp labels::::888:x, space :::p}}"
+				"$verticalGroup": "par l {seq t {comp labels:::p:465:p, space :p:12:p, par l {comp button7:::p:63:p, comp button8:::p:63:p, comp button9:::p:63:p, comp button10:::p:63:p, par b:l {comp button1::b:p:63:p, comp button2::b:p:63:p}, comp button3::l:p:63:p, comp button4::l:p:63:p, comp button5::l:p:63:p, comp button6::l:p:63:p}, space ::33:x, par l {comp button11:::p:63:p, comp button12:::p:63:p, comp button13:::p:63:p, comp button14:::p:63:p, par b {comp button15::b:p:63:p, comp button16::b:p:63:p, comp exitButton::b:p:63:p}}, space :::x, comp label55:::p::p}}"
+			} ) {
+				name: "actions"
+				"maximumSize": new java.awt.Dimension( 900, 660 )
+				"minimumSize": new java.awt.Dimension( 900, 660 )
+				"preferredSize": new java.awt.Dimension( 900, 660 )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "button1"
+					"text": "0"
+					"cursor": &Cursor0 new java.awt.Cursor( 12 )
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "button2"
+					"text": "1"
+					"cursor": #Cursor0
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "button3"
+					"text": "2"
+					"cursor": #Cursor0
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "button4"
+					"text": "3"
+					"cursor": #Cursor0
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "button5"
+					"text": "4"
+					"cursor": #Cursor0
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "button6"
+					"text": "5"
+					"cursor": #Cursor0
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "button7"
+					"text": "6"
+					"cursor": #Cursor0
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "button8"
+					"text": "7"
+					"cursor": #Cursor0
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "button9"
+					"text": "8"
+					"cursor": #Cursor0
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "button10"
+					"text": "9"
+					"cursor": #Cursor0
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "button11"
+					"text": "+"
+					"cursor": #Cursor0
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "button12"
+					"text": "-"
+					"cursor": #Cursor0
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "button13"
+					"text": "*"
+					"cursor": #Cursor0
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "button14"
+					"text": "/"
+					"cursor": #Cursor0
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "button15"
+					"text": "="
+					"cursor": #Cursor0
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "button16"
+					"text": "Guess"
+					"cursor": #Cursor0
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "button16", true ) )
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "exitButton"
+					"text": "Save & Exit"
+					"cursor": #Cursor0
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "exit", true ) )
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label55"
+					"text": "20011009 - Gürol Berkay Çınar"
+				} )
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.GridLayout ) ) {
+					name: "labels"
+				} )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"x": 0
+				"y": 0
+				"height": 660
 			} )
 		}, new FormLayoutConstraints( null ) {
 			"location": new java.awt.Point( 0, 0 )
 			"size": new java.awt.Dimension( 900, 660 )
-		} )
-		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-			"$horizontalGroup": "par l {seq l {space :p:17:p, par l:::p {par l {seq {comp label108:::p:86:p, space :12:12:p, comp label116:::p:86:p, space :12:12:p, comp label115:::p:86:p, space :12:12:p, comp label114:::p:86:p, space :12:12:p, comp label113:::p:86:p, space :12:12:p, comp label112:::p:86:p, space :12:12:p, comp label111:::p:86:p, space :12:12:p, comp label110:::p:86:p, space :12:12:p, comp label109:::p:86:p}, par t {seq {comp label99:::p:86:p, space :12:12:p, comp label107:::p:86:p, space :12:12:p, comp label106:::p:86:p, space :12:12:p, comp label105:::p:86:p, space :12:12:p, comp label104:::p:86:p, space :12:12:p, comp label103:::p:86:p, space :12:12:p, comp label102:::p:86:p, space :12:12:p, comp label101:::p:86:p, space :12:12:p, comp label100:::p:86:p}, par l {seq {comp label90:::p:86:p, space :12:12:p, comp label98:::p:86:p, space :12:12:p, comp label97:::p:86:p, space :12:12:p, comp label96:::p:86:p, space :12:12:p, comp label95:::p:86:p, space :12:12:p, comp label94:::p:86:p, space :12:12:p, comp label93:::p:86:p, space :12:12:p, comp label92:::p:86:p, space :12:12:p, comp label91:::p:86:p}, par t {seq {comp label81:::p:86:p, space :12:12:p, comp label89:::p:86:p, space :12:12:p, comp label88:::p:86:p, space :12:12:p, comp label87:::p:86:p, space :12:12:p, comp label86:::p:86:p, space :12:12:p, comp label85:::p:86:p, space :12:12:p, comp label84:::p:86:p, space :12:12:p, comp label83:::p:86:p, space :12:12:p, comp label82:::p:86:p}, seq {comp label65:::p:86:p, space u:::p, comp label66:::p:86:p, space u:::p, comp label74:::p:86:p, space u:::p, comp label75:::p:86:p, space u:::p, comp label76:::p:86:p, space u:::p, comp label77:::p:86:p, space u:::p, comp label78:::p:86:p, space u:::p, comp label79:::p:86:p, space u:::p, comp label80:::p:86:p}}}}, seq t {comp label117:::p:86:p, space :12:12:p, comp label125:::p:86:p, space :12:12:p, comp label124:::p:86:p, space :12:12:p, comp label123:::p:86:p, space :12:12:p, comp label122:::p:86:p, space :12:12:p, comp label121:::p:86:p, space :12:12:p, comp label120:::p:86:p, space :12:12:p, comp label119:::p:86:p, space :12:12:p, comp label118:::p:86:p}}, seq l {par l:::p {seq l {comp label126:::p:86:p, space :12:12:p, comp label134:::p:86:p, space :12:12:p, comp label133:::p:86:p, space :12:12:p, comp label132:::p:86:p, space :12:12:p, comp label131:::p:86:p, space :12:12:p, comp label130:::p:86:p, space :12:12:p, comp label129:::p:86:p, space :12:12:p, comp label128:::p:86:p}, seq l {comp label135:::p:86:p, space :12:12:p, comp label141:::p:86:p, space :12:12:p, comp label140:::p:86:p, space :12:12:p, comp label139:::p:86:p, space :12:12:p, comp label138:::p:86:p, space :12:12:p, comp label137:::p:86:p, space :::x, comp label142:::p:86:p, space u:::p, comp label136:::p:86:p}}, space :p:12:p, par l {comp button2:::p:86:p, comp label127:::p:86:p}}}, space ::13:x}}"
-			"$verticalGroup": "par l {seq t {space :p:18:p, par b {comp label65::b:p:62:p, comp label66::b:p:62:p, comp label74::b:p:62:p, comp label75::b:p:62:p, comp label76::b:p:62:p, comp label77::b:p:62:p, comp label78::b:p:62:p, comp label79::b:p:62:p, comp label80::b:p:62:p}, space u:::p, par l {comp label81:::p:62:p, comp label89:::p:62:p, comp label88:::p:62:p, comp label87:::p:62:p, comp label86:::p:62:p, comp label85:::p:62:p, comp label84:::p:62:p, comp label83:::p:62:p, comp label82:::p:62:p}, space u:::p, par l {comp label90:::p:62:p, comp label98:::p:62:p, comp label97:::p:62:p, comp label96:::p:62:p, comp label95:::p:62:p, comp label94:::p:62:p, comp label93:::p:62:p, comp label92:::p:62:p, comp label91:::p:62:p}, space u:::p, par l {comp label99:::p:62:p, comp label107:::p:62:p, comp label106:::p:62:p, comp label105:::p:62:p, comp label104:::p:62:p, comp label103:::p:62:p, comp label102:::p:62:p, comp label101:::p:62:p, comp label100:::p:62:p}, space u:::p, par l {comp label108:::p:62:p, comp label116:::p:62:p, comp label115:::p:62:p, comp label114:::p:62:p, comp label113:::p:62:p, comp label112:::p:62:p, comp label111:::p:62:p, comp label110:::p:62:p, comp label109:::p:62:p}, space u:::p, par l {comp label117:::p:62:p, comp label125:::p:62:p, comp label124:::p:62:p, comp label123:::p:62:p, comp label122:::p:62:p, comp label121:::p:62:p, comp label120:::p:62:p, comp label119:::p:62:p, comp label118:::p:62:p}, space :p:43:p, par l {comp label126:::p:62:p, comp label134:::p:62:p, comp label133:::p:62:p, comp label132:::p:62:p, comp label131:::p:62:p, comp label130:::p:62:p, comp label129:::p:62:p, comp label128:::p:62:p, comp label127:::p:62:p}, space :::p, par l {comp label135:::p:62:p, comp label141:::p:62:p, comp label140:::p:62:p, comp label139:::p:62:p, comp label138:::p:62:p, comp label137:::p:62:p, comp button2::l:p:55:p, par b:l {comp label136::b:p:62:p, comp label142::b:p:62:p}}, space ::37:x}}"
-		} ) {
-			name: "panel2"
-			"maximumSize": #Dimension0
-			"minimumSize": #Dimension1
-			"preferredSize": #Dimension2
-			add( new FormComponent( "javax.swing.JButton" ) {
-				name: "button2"
-				"text": "Save and Return"
-				"border": #BevelBorder0
-				"horizontalTextPosition": 0
-				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "button1", true ) )
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label65"
-				"text": "text"
-				"background": #Color0
-				"border": #EtchedBorder0
-				"horizontalAlignment": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label66"
-				"text": "text"
-				"border": #EtchedBorder0
-				"horizontalAlignment": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label74"
-				"text": "text"
-				"border": #EtchedBorder0
-				"horizontalAlignment": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label75"
-				"text": "text"
-				"border": #EtchedBorder0
-				"horizontalAlignment": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label76"
-				"text": "text"
-				"border": #EtchedBorder0
-				"horizontalAlignment": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label77"
-				"text": "text"
-				"border": #EtchedBorder0
-				"horizontalAlignment": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label78"
-				"text": "text"
-				"border": #EtchedBorder0
-				"horizontalAlignment": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label79"
-				"text": "text"
-				"border": #EtchedBorder0
-				"horizontalAlignment": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label80"
-				"text": "text"
-				"border": #EtchedBorder0
-				"horizontalAlignment": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label81"
-				"text": "text"
-				"background": #Color0
-				"border": #EtchedBorder0
-				"horizontalAlignment": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label82"
-				"text": "text"
-				"border": #EtchedBorder0
-				"horizontalAlignment": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label83"
-				"text": "text"
-				"border": #EtchedBorder0
-				"horizontalAlignment": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label84"
-				"text": "text"
-				"border": #EtchedBorder0
-				"horizontalAlignment": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label85"
-				"text": "text"
-				"border": #EtchedBorder0
-				"horizontalAlignment": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label86"
-				"text": "text"
-				"border": #EtchedBorder0
-				"horizontalAlignment": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label87"
-				"text": "text"
-				"border": #EtchedBorder0
-				"horizontalAlignment": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label88"
-				"text": "text"
-				"border": #EtchedBorder0
-				"horizontalAlignment": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label89"
-				"text": "text"
-				"border": #EtchedBorder0
-				"horizontalAlignment": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label90"
-				"text": "text"
-				"background": #Color0
-				"border": #EtchedBorder0
-				"horizontalAlignment": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label91"
-				"text": "text"
-				"border": #EtchedBorder0
-				"horizontalAlignment": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label92"
-				"text": "text"
-				"border": #EtchedBorder0
-				"horizontalAlignment": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label93"
-				"text": "text"
-				"border": #EtchedBorder0
-				"horizontalAlignment": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label94"
-				"text": "text"
-				"border": #EtchedBorder0
-				"horizontalAlignment": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label95"
-				"text": "text"
-				"border": #EtchedBorder0
-				"horizontalAlignment": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label96"
-				"text": "text"
-				"border": #EtchedBorder0
-				"horizontalAlignment": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label97"
-				"text": "text"
-				"border": #EtchedBorder0
-				"horizontalAlignment": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label98"
-				"text": "text"
-				"border": #EtchedBorder0
-				"horizontalAlignment": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label99"
-				"text": "text"
-				"background": #Color0
-				"border": #EtchedBorder0
-				"horizontalAlignment": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label100"
-				"text": "text"
-				"border": #EtchedBorder0
-				"horizontalAlignment": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label101"
-				"text": "text"
-				"border": #EtchedBorder0
-				"horizontalAlignment": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label102"
-				"text": "text"
-				"border": #EtchedBorder0
-				"horizontalAlignment": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label103"
-				"text": "text"
-				"border": #EtchedBorder0
-				"horizontalAlignment": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label104"
-				"text": "text"
-				"border": #EtchedBorder0
-				"horizontalAlignment": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label105"
-				"text": "text"
-				"border": #EtchedBorder0
-				"horizontalAlignment": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label106"
-				"text": "text"
-				"border": #EtchedBorder0
-				"horizontalAlignment": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label107"
-				"text": "text"
-				"border": #EtchedBorder0
-				"horizontalAlignment": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label108"
-				"text": "text"
-				"background": #Color0
-				"border": #EtchedBorder0
-				"horizontalAlignment": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label109"
-				"text": "text"
-				"border": #EtchedBorder0
-				"horizontalAlignment": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label110"
-				"text": "text"
-				"border": #EtchedBorder0
-				"horizontalAlignment": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label111"
-				"text": "text"
-				"border": #EtchedBorder0
-				"horizontalAlignment": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label112"
-				"text": "text"
-				"border": #EtchedBorder0
-				"horizontalAlignment": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label113"
-				"text": "text"
-				"border": #EtchedBorder0
-				"horizontalAlignment": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label114"
-				"text": "text"
-				"border": #EtchedBorder0
-				"horizontalAlignment": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label115"
-				"text": "text"
-				"border": #EtchedBorder0
-				"horizontalAlignment": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label116"
-				"text": "text"
-				"border": #EtchedBorder0
-				"horizontalAlignment": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label117"
-				"text": "text"
-				"background": #Color0
-				"horizontalAlignment": 0
-				"border": #EtchedBorder0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label118"
-				"text": "text"
-				"horizontalAlignment": 0
-				"border": #EtchedBorder0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label119"
-				"text": "text"
-				"horizontalAlignment": 0
-				"border": #EtchedBorder0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label120"
-				"text": "text"
-				"horizontalAlignment": 0
-				"border": #EtchedBorder0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label121"
-				"text": "text"
-				"horizontalAlignment": 0
-				"border": #EtchedBorder0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label122"
-				"text": "text"
-				"horizontalAlignment": 0
-				"border": #EtchedBorder0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label123"
-				"text": "text"
-				"horizontalAlignment": 0
-				"border": #EtchedBorder0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label124"
-				"text": "text"
-				"horizontalAlignment": 0
-				"border": #EtchedBorder0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label125"
-				"text": "text"
-				"horizontalAlignment": 0
-				"border": #EtchedBorder0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label126"
-				"text": "0"
-				"background": #Color0
-				"border": #BevelBorder0
-				"horizontalTextPosition": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label127"
-				"text": "8"
-				"border": #BevelBorder0
-				"horizontalTextPosition": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label128"
-				"text": "7"
-				"border": #BevelBorder0
-				"horizontalTextPosition": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label129"
-				"text": "6"
-				"border": #BevelBorder0
-				"horizontalTextPosition": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label130"
-				"text": "5"
-				"border": #BevelBorder0
-				"horizontalTextPosition": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label131"
-				"text": "4"
-				"border": #BevelBorder0
-				"horizontalTextPosition": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label132"
-				"text": "3"
-				"border": #BevelBorder0
-				"horizontalTextPosition": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label133"
-				"text": "2"
-				"border": #BevelBorder0
-				"horizontalTextPosition": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label134"
-				"text": "1"
-				"border": #BevelBorder0
-				"horizontalTextPosition": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label135"
-				"text": "9"
-				"background": #Color0
-				"border": #BevelBorder0
-				"horizontalTextPosition": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label136"
-				"text": "Guess"
-				"border": #BevelBorder0
-				"horizontalTextPosition": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label137"
-				"text": "="
-				"border": #BevelBorder0
-				"horizontalTextPosition": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label138"
-				"text": "/"
-				"border": #BevelBorder0
-				"horizontalTextPosition": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label139"
-				"text": "*"
-				"border": #BevelBorder0
-				"horizontalTextPosition": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label140"
-				"text": "-"
-				"border": #BevelBorder0
-				"horizontalTextPosition": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label141"
-				"text": "+"
-				"border": #BevelBorder0
-				"horizontalTextPosition": 0
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label142"
-				"text": "<-"
-				"border": #BevelBorder0
-				"horizontalTextPosition": 0
-			} )
-		}, new FormLayoutConstraints( null ) {
-			"location": new java.awt.Point( 0, 5 )
 		} )
 	}
 }

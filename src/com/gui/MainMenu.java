@@ -64,7 +64,6 @@ public class MainMenu {
         //======== panel ========
         {
             panel.setPreferredSize(new Dimension(800, 560));
-            panel.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
             panel.setAlignmentX(0.0F);
             panel.setAlignmentY(0.0F);
             panel.setMaximumSize(new Dimension(800, 560));
@@ -86,15 +85,18 @@ public class MainMenu {
             newGame.setBackground(new Color(42, 157, 143));
             newGame.setForeground(new Color(255, 51, 51));
             newGame.setBorder(new BevelBorder(BevelBorder.RAISED, new Color(42, 157, 143), null, null, null));
+            newGame.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
             newGame.addActionListener(e -> newGame(e));
 
             //---- continueGame ----
             continueGame.setText("Continue");
             continueGame.setBackground(new Color(42, 157, 143));
+            continueGame.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 
             //---- exit ----
             exit.setText("Exit");
             exit.setBackground(new Color(42, 157, 143));
+            exit.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
             exit.addActionListener(e -> exit(e));
 
             //---- label2 ----
@@ -104,6 +106,7 @@ public class MainMenu {
             test.setText("Test");
             test.setFont(test.getFont().deriveFont(test.getFont().getSize() + 5f));
             test.setBackground(new Color(42, 157, 143));
+            test.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
             test.addActionListener(e -> test(e));
 
             //---- label3 ----

@@ -4,6 +4,7 @@
 
 package com.gui;
 
+import java.awt.*;
 import com.util.EquationUtil;
 
 import java.awt.event.*;
@@ -48,21 +49,29 @@ public class TestScreen {
         button1 = new JButton();
         returnMenu = new JButton();
         testResult = new JLabel();
+        label55 = new JLabel();
 
         //======== panel ========
         {
 
             //---- button1 ----
             button1.setText("Regenerate: ");
+            button1.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
             button1.addActionListener(e -> button1(e));
 
             //---- returnMenu ----
             returnMenu.setText("Return to Main Menu");
+            returnMenu.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
             returnMenu.addActionListener(e -> returnMenu(e));
 
             //---- testResult ----
             testResult.setText("text");
+            testResult.setHorizontalAlignment(SwingConstants.CENTER);
+            testResult.setFont(testResult.getFont().deriveFont(testResult.getFont().getSize() + 12f));
             testResult.addPropertyChangeListener(e -> testResultPropertyChange(e));
+
+            //---- label55 ----
+            label55.setText("20011009 - G\u00fcrol Berkay \u00c7\u0131nar");
 
             GroupLayout panelLayout = new GroupLayout(panel);
             panel.setLayout(panelLayout);
@@ -80,7 +89,8 @@ public class TestScreen {
                                 .addComponent(button1))
                             .addGroup(panelLayout.createSequentialGroup()
                                 .addGap(313, 313, 313)
-                                .addComponent(returnMenu)))
+                                .addComponent(returnMenu))
+                            .addComponent(label55))
                         .addContainerGap(293, Short.MAX_VALUE))
             );
             panelLayout.setVerticalGroup(
@@ -98,7 +108,8 @@ public class TestScreen {
                         .addComponent(button1)
                         .addGap(18, 18, 18)
                         .addComponent(returnMenu)
-                        .addContainerGap(166, Short.MAX_VALUE))
+                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 148, Short.MAX_VALUE)
+                        .addComponent(label55))
             );
         }
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
@@ -110,6 +121,7 @@ public class TestScreen {
     private JButton button1;
     private JButton returnMenu;
     private JLabel testResult;
+    private JLabel label55;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 
     public JPanel getPanel() {
