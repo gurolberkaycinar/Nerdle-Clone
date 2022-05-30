@@ -17,9 +17,12 @@ import static com.app.App.gameWindow;
  * @author unknown
  */
 public class GameScreen {
-    private JLabel[][] labelMatrix = new JLabel[6][9];
+    private static JLabel[][] labelMatrix = new JLabel[6][9];
+
     public GameScreen() {
         initComponents();
+        labels.setLayout(new GridLayout(6, 9));
+        putMatrix();
     }
 
     private void button1(ActionEvent e) {
@@ -199,16 +202,13 @@ public class GameScreen {
                                     .addGap(6, 6, 6)
                                     .addComponent(button10, GroupLayout.PREFERRED_SIZE, 75, GroupLayout.PREFERRED_SIZE)))
                             .addContainerGap(63, Short.MAX_VALUE))
-                        .addGroup(GroupLayout.Alignment.TRAILING, actionsLayout.createSequentialGroup()
-                            .addContainerGap()
-                            .addComponent(labels, GroupLayout.DEFAULT_SIZE, 888, Short.MAX_VALUE)
-                            .addContainerGap())
+                        .addComponent(labels, GroupLayout.DEFAULT_SIZE, 900, Short.MAX_VALUE)
                 );
                 actionsLayout.setVerticalGroup(
                     actionsLayout.createParallelGroup()
                         .addGroup(GroupLayout.Alignment.TRAILING, actionsLayout.createSequentialGroup()
                             .addComponent(labels, GroupLayout.PREFERRED_SIZE, 465, GroupLayout.PREFERRED_SIZE)
-                            .addGap(12, 12, 12)
+                            .addGap(38, 38, 38)
                             .addGroup(actionsLayout.createParallelGroup()
                                 .addComponent(button7, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE)
                                 .addComponent(button8, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE)
@@ -221,7 +221,7 @@ public class GameScreen {
                                 .addComponent(button4, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE)
                                 .addComponent(button5, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE)
                                 .addComponent(button6, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE))
-                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
                             .addGroup(actionsLayout.createParallelGroup()
                                 .addComponent(button11, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE)
                                 .addComponent(button12, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE)
@@ -283,4 +283,13 @@ public class GameScreen {
     public JPanel getPanel() {
         return panel;
     }
+
+    public void putMatrix() {
+        for(int i = 0; i < 6; i++) {
+            for(int j = 0; j < 9; j++) {
+                labels.add(new JLabel(Integer.toString(i * 6 + j)));
+            }
+        }
+    }
+
 }

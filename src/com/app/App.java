@@ -20,4 +20,5 @@ public class App {
         //System.out.println(new EquationUtil().calculateEquation("6*164"));
     }
 
+
 }
