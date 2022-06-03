@@ -13,6 +13,7 @@ import javax.swing.border.*;
 
 import static com.app.App.*;
 
+import com.util.EquationUtil;
 import com.util.MatrixUtil;
 import com.util.MatrixUtil.*;
 
@@ -30,7 +31,7 @@ public class GameScreen {
         initComponents();
         labels.setLayout(new GridLayout(6, 9));
         labelMatrix = new MatrixUtil().convertCharToLabel(gameSave.getLabelMatrix());
-        putMatrix(7);
+        putMatrix(gameSave.getEquation().length());
     }
 
     public void putMatrix(int digitCount) {
@@ -53,6 +54,9 @@ public class GameScreen {
                 labels.add(tmpLabeL);
             }
         }
+        for(int i = 0; i < gameSave.getCurrentRow(); i++) {
+            new MatrixUtil().colorLine(labelMatrix[i]);
+        }
         labels.validate();
         labels.repaint();
     }
@@ -70,9 +74,9 @@ public class GameScreen {
 
 
     private void labelClicked(MouseEvent e) {
-        for(int i = 0; i < 6; i++) {
+        for(int i = gameSave.getCurrentRow(); i < 6; i++) {
             for(int j = 0; j < 9; j++) {
-                //labelMatrix[i][j].setBackground(Color.white);
+                labelMatrix[i][j].setBackground(Color.white);
                 if(((JLabel)e.getSource()).equals(labelMatrix[i][j])) {
                     System.out.println(i + ", " + j);
                     labelMatrix[i][j].setBackground(Color.blue);
@@ -181,6 +185,32 @@ public class GameScreen {
         }
     }
 
+    private void guess(ActionEvent e) {
+        boolean check = true;
+        for(int i = 0; i < gameSave.getEquation().length(); i++) {
+            if(labelMatrix[gameSave.getCurrentRow()][i] == null) {
+                check = false;
+                System.out.println("Invalid length");
+            }
+        }
+        if(check && new EquationUtil().isValid(String.valueOf(new MatrixUtil().convertLabelToChar(labelMatrix[gameSave.getCurrentRow()])).substring(0, gameSave.getEquation().length()))) {
+            new MatrixUtil().colorLine(labelMatrix[gameSave.getCurrentRow()]);
+            System.out.println("Color");
+            gameSave.setCurrentRow(gameSave.getCurrentRow() + 1);
+            if(String.valueOf(new MatrixUtil().convertLabelToChar(labelMatrix[gameSave.getCurrentRow()])).equals(gameSave.getEquation())) {
+                System.out.println("Win!");
+            } else if(gameSave.getCurrentRow() > 5) {
+                System.out.println("Lose");
+            }
+        }
+    }
+
+    private void equal(ActionEvent e) {
+        if(lastSelected != null && selectedY == gameSave.getCurrentRow()) {
+            lastSelected.setText("=");
+        }
+    }
+
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
@@ -222,7 +252,10 @@ public class GameScreen {
                 //---- button0 ----
                 button0.setText("0");
                 button0.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-                button0.addActionListener(e -> button1(e));
+                button0.addActionListener(e -> {
+			button1(e);
+			button0(e);
+		});
 
                 //---- button1 ----
                 button1.setText("1");
@@ -295,11 +328,15 @@ public class GameScreen {
                 //---- equalButton ----
                 equalButton.setText("=");
                 equalButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+                equalButton.addActionListener(e -> equal(e));
 
                 //---- guessButton ----
                 guessButton.setText("Guess");
                 guessButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-                guessButton.addActionListener(e -> button16(e));
+                guessButton.addActionListener(e -> {
+			button16(e);
+			guess(e);
+		});
 
                 //---- exitButton ----
                 exitButton.setText("Save & Exit");

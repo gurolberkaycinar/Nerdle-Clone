@@ -60,12 +60,12 @@ public class EquationUtil {
         char[] arr = str.toCharArray();
 
         if(!(arr[0] >= '1' && arr[0] <= '9') || !(arr[equalIndex - 1] >= '0' && arr[equalIndex - 1] <= '9')) {
-            System.out.println("Illegal start or finish before =");
+            System.out.println("Illegal start or finish before = 1");
             return false;
         }
 
         if(!((arr[equalIndex + 1] >= '1' && arr[equalIndex + 1] <= '9') || arr[equalIndex + 1] == '-') || !(arr[str.length() - 1] >= '0' && arr[str.length() - 1] <= '9')) {
-            System.out.println("Illegal start or finish after =");
+            System.out.println("Illegal start or finish after = 2");
             return false;
         }
 

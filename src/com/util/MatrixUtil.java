@@ -40,9 +40,19 @@ public class MatrixUtil {
     }
 
     public void colorLine(JLabel[] line) {
-        for(int i = 0; i < 6; i++) {
+        for(int i = 0; i < gameSave.getEquation().length(); i++) {
+            line[i].setBackground(Color.red);
             if(convertLabelToChar(line)[i] == gameSave.getEquation().charAt(i)) {
                 line[i].setBackground(Color.green);
+            }
+        }
+        for(int i = 0; i < gameSave.getEquation().length(); i++) {
+            if(convertLabelToChar(line)[i] != gameSave.getEquation().charAt(i)) {
+                for(int j = 0; j < 9; j++) {
+                    if(i != j && convertLabelToChar(line)[i] != gameSave.getEquation().charAt(i) && convertLabelToChar(line)[i] == gameSave.getEquation().charAt(j)) {
+                        line[i].setBackground(Color.yellow);
+                    }
+                }
             }
         }
     }

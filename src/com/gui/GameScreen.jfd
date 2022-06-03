@@ -21,6 +21,7 @@ new FormModel {
 					"text": "0"
 					"cursor": &Cursor0 new java.awt.Cursor( 12 )
 					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "button1", true ) )
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "button0", true ) )
 				} )
 				add( new FormComponent( "javax.swing.JButton" ) {
 					name: "button1"
@@ -105,12 +106,14 @@ new FormModel {
 					name: "equalButton"
 					"text": "="
 					"cursor": #Cursor0
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "equal", true ) )
 				} )
 				add( new FormComponent( "javax.swing.JButton" ) {
 					name: "guessButton"
 					"text": "Guess"
 					"cursor": #Cursor0
 					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "button16", true ) )
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "guess", true ) )
 				} )
 				add( new FormComponent( "javax.swing.JButton" ) {
 					name: "exitButton"

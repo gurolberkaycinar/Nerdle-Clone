@@ -48,6 +48,7 @@ public class App {
                 gameSave.setAverageRow(0);
                 gameSave.setAverageTime(0);
                 gameSave.setEquation(new EquationUtil().generateEquation());
+                System.out.println("CURRENT EQUATION: " + gameSave.getEquation());
                 gameSave.setLabelMatrix(new char[6][9]);
                 try {
                     ObjectOutputStream writer = new ObjectOutputStream(new FileOutputStream("save.dat"));
