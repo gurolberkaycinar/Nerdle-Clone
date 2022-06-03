@@ -11,6 +11,7 @@ import javax.swing.GroupLayout;
 import javax.swing.border.*;
 import javax.swing.event.*;
 
+import static com.app.App.gameSave;
 import static com.app.App.gameWindow;
 
 /**
@@ -19,6 +20,11 @@ import static com.app.App.gameWindow;
 public class MainMenu {
     public MainMenu() {
         initComponents();
+        unfinished.setText(Integer.toString(gameSave.getUnfinished()));
+        won.setText(Integer.toString(gameSave.getWon()));
+        lost.setText(Integer.toString(gameSave.getLost()));
+        guess.setText(Integer.toString(gameSave.getAverageRow()));
+        duration.setText(Integer.toString(gameSave.getAverageTime()));
     }
 
     private void test(ActionEvent e) {
@@ -256,4 +262,5 @@ public class MainMenu {
     public JPanel getPanel() {
         return panel;
     }
+
 }

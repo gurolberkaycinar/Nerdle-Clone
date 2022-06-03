@@ -7,6 +7,8 @@ package com.gui;
 import javax.swing.*;
 import javax.swing.GroupLayout;
 
+import static com.app.App.saveFile;
+
 /**
  * @author unknown
  */
@@ -44,7 +46,7 @@ public class Window extends JFrame {
 
     public void changePanel(String choice) {
         if(choice.equals("mainMenu")) {
-            this.setContentPane(mainMenu);
+            this.setContentPane(new MainMenu().getPanel());
         } else if (choice.equals("testScreen")) {
             this.setContentPane(testScreen);
         } else {

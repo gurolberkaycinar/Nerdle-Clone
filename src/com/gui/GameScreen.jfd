@@ -1,4 +1,4 @@
-JFDML JFormDesigner: "7.0.5.4.420" Java: "11.0.14.1" encoding: "UTF-8"
+JFDML JFormDesigner: "7.0.5.4.420" Java: "11.0.15" encoding: "UTF-8"
 
 new FormModel {
 	contentType: "form/swing"
@@ -9,90 +9,105 @@ new FormModel {
 			"minimumSize": new java.awt.Dimension( 900, 660 )
 			"preferredSize": new java.awt.Dimension( 900, 660 )
 			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-				"$horizontalGroup": "par l {seq {space :p:33:p, par l {seq {comp button11:::p:75:p, space :6:6:p, comp button12:::p:75:p, space :6:6:p, comp button13:::p:75:p, space :6:6:p, comp button14:::p:75:p, space :6:6:p, comp button15:::p:75:p, space :::p, comp button16:::p:75:p, space u:::p, comp exitButton:::p:75:p}, seq {space :6:6:p, comp label55:::p::p}, seq l {comp button1:::p:75:p, space :::p, comp button2:::p:75:p, space :::p, comp button3:::p:75:p, space :6:6:p, comp button4:::p:75:p, space :::p, comp button5:::p:75:p, space :6:6:p, comp button6:::p:75:p, space :6:6:p, comp button7:::p:75:p, space :6:6:p, comp button8:::p:75:p, space :::p, comp button9:::p:75:p, space :6:6:p, comp button10:::p:75:p}}, space ::63:x}, seq t {space :::p, comp labels::::888:x, space :::p}}"
-				"$verticalGroup": "par l {seq t {comp labels:::p:465:p, space :p:12:p, par l {comp button7:::p:63:p, comp button8:::p:63:p, comp button9:::p:63:p, comp button10:::p:63:p, par b:l {comp button1::b:p:63:p, comp button2::b:p:63:p}, comp button3::l:p:63:p, comp button4::l:p:63:p, comp button5::l:p:63:p, comp button6::l:p:63:p}, space ::33:x, par l {comp button11:::p:63:p, comp button12:::p:63:p, comp button13:::p:63:p, comp button14:::p:63:p, par b {comp button15::b:p:63:p, comp button16::b:p:63:p, comp exitButton::b:p:63:p}}, space :::x, comp label55:::p::p}}"
+				"$horizontalGroup": "par l {seq l {space :p:33:p, par l {seq {comp plusButton:::p:75:p, space :6:6:p, comp minusButton:::p:75:p, space :6:6:p, comp multiplyButton:::p:75:p, space :6:6:p, comp divideButton:::p:75:p, space :6:6:p, comp equalButton:::p:75:p, space :::p, comp guessButton:::p:75:p, space u:::p, comp exitButton:::p:75:p}, seq {space :6:6:p, comp label55:::p::p}, seq l {comp button0:::p:75:p, space :::p, comp button1:::p:75:p, space :::p, comp button2:::p:75:p, space :6:6:p, comp button3:::p:75:p, space :::p, comp button4:::p:75:p, space :6:6:p, comp button5:::p:75:p, space :6:6:p, comp button6:::p:75:p, space :6:6:p, comp button7:::p:75:p, space :::p, comp button8:::p:75:p, space :6:6:p, comp button9:::p:75:p}}, space ::63:x}, comp labels::l::900:x}"
+				"$verticalGroup": "par l {seq t {comp labels:::p:465:p, space :p:38:p, par l {comp button6:::p:63:p, comp button7:::p:63:p, comp button8:::p:63:p, comp button9:::p:63:p, par b:l {comp button0::b:p:63:p, comp button1::b:p:63:p}, comp button2::l:p:63:p, comp button3::l:p:63:p, comp button4::l:p:63:p, comp button5::l:p:63:p}, space ::7:x, par l {comp plusButton:::p:63:p, comp minusButton:::p:63:p, comp multiplyButton:::p:63:p, comp divideButton:::p:63:p, par b {comp equalButton::b:p:63:p, comp guessButton::b:p:63:p, comp exitButton::b:p:63:p}}, space :::x, comp label55:::p::p}}"
 			} ) {
 				name: "actions"
 				"maximumSize": new java.awt.Dimension( 900, 660 )
 				"minimumSize": new java.awt.Dimension( 900, 660 )
 				"preferredSize": new java.awt.Dimension( 900, 660 )
 				add( new FormComponent( "javax.swing.JButton" ) {
-					name: "button1"
+					name: "button0"
 					"text": "0"
 					"cursor": &Cursor0 new java.awt.Cursor( 12 )
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "button1", true ) )
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "button1"
+					"text": "1"
+					"cursor": #Cursor0
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "button1", true ) )
 				} )
 				add( new FormComponent( "javax.swing.JButton" ) {
 					name: "button2"
-					"text": "1"
+					"text": "2"
 					"cursor": #Cursor0
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "button2", true ) )
 				} )
 				add( new FormComponent( "javax.swing.JButton" ) {
 					name: "button3"
-					"text": "2"
+					"text": "3"
 					"cursor": #Cursor0
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "button3", true ) )
 				} )
 				add( new FormComponent( "javax.swing.JButton" ) {
 					name: "button4"
-					"text": "3"
+					"text": "4"
 					"cursor": #Cursor0
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "button4", true ) )
 				} )
 				add( new FormComponent( "javax.swing.JButton" ) {
 					name: "button5"
-					"text": "4"
+					"text": "5"
 					"cursor": #Cursor0
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "button5", true ) )
 				} )
 				add( new FormComponent( "javax.swing.JButton" ) {
 					name: "button6"
-					"text": "5"
+					"text": "6"
 					"cursor": #Cursor0
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "button6", true ) )
 				} )
 				add( new FormComponent( "javax.swing.JButton" ) {
 					name: "button7"
-					"text": "6"
+					"text": "7"
 					"cursor": #Cursor0
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "button7", true ) )
 				} )
 				add( new FormComponent( "javax.swing.JButton" ) {
 					name: "button8"
-					"text": "7"
+					"text": "8"
 					"cursor": #Cursor0
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "button8", true ) )
 				} )
 				add( new FormComponent( "javax.swing.JButton" ) {
 					name: "button9"
-					"text": "8"
-					"cursor": #Cursor0
-				} )
-				add( new FormComponent( "javax.swing.JButton" ) {
-					name: "button10"
 					"text": "9"
 					"cursor": #Cursor0
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "button9", true ) )
 				} )
 				add( new FormComponent( "javax.swing.JButton" ) {
-					name: "button11"
+					name: "plusButton"
 					"text": "+"
 					"cursor": #Cursor0
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "button11", true ) )
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "plus", true ) )
 				} )
 				add( new FormComponent( "javax.swing.JButton" ) {
-					name: "button12"
+					name: "minusButton"
 					"text": "-"
 					"cursor": #Cursor0
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "minus", true ) )
 				} )
 				add( new FormComponent( "javax.swing.JButton" ) {
-					name: "button13"
+					name: "multiplyButton"
 					"text": "*"
 					"cursor": #Cursor0
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "multiply", true ) )
 				} )
 				add( new FormComponent( "javax.swing.JButton" ) {
-					name: "button14"
+					name: "divideButton"
 					"text": "/"
 					"cursor": #Cursor0
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "divide", true ) )
 				} )
 				add( new FormComponent( "javax.swing.JButton" ) {
-					name: "button15"
+					name: "equalButton"
 					"text": "="
 					"cursor": #Cursor0
 				} )
 				add( new FormComponent( "javax.swing.JButton" ) {
-					name: "button16"
+					name: "guessButton"
 					"text": "Guess"
 					"cursor": #Cursor0
 					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "button16", true ) )
@@ -107,8 +122,12 @@ new FormModel {
 					name: "label55"
 					"text": "20011009 - Gürol Berkay Çınar"
 				} )
-				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.GridLayout ) ) {
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.GridLayout ) {
+					"columns": 9
+					"rows": 6
+				} ) {
 					name: "labels"
+					addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "labelsMouseClicked", true ) )
 				} )
 			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
 				"x": 0
