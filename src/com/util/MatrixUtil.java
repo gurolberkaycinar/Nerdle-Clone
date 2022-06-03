@@ -20,7 +20,9 @@ public class MatrixUtil {
     public char[] convertLabelToChar(JLabel[] labels) {
         char[] line = new char[9];
         for(int i = 0; i < 9; i++) {
-            line[i] = labels[i].getText().charAt(0);
+            if(!labels[i].equals("")) {
+                line[i] = labels[i].getText().charAt(0);
+            }
         }
         return line;
     }

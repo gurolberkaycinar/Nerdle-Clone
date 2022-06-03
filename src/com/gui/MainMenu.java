@@ -38,6 +38,7 @@ public class MainMenu {
 
     private void exit(ActionEvent e) {
         gameWindow.dispose();
+        System.exit(1);
     }
 
     private void unfinishedCaretUpdate(CaretEvent e) {

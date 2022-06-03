@@ -35,6 +35,8 @@ public class GameScreen {
         labelMatrix = new MatrixUtil().convertCharToLabel(gameSave.getLabelMatrix());
         System.out.println("Current equation:" + gameSave.getEquation());
         putMatrix(gameSave.getEquation().length());
+        lastSelected = labelMatrix[gameSave.getCurrentRow()][0];
+        lastSelected.setBackground(Color.lightGray);
         seconds = (int) gameSave.getTime();
         Timer t = new Timer(1000, new ActionListener() {
             @Override
@@ -88,16 +90,15 @@ public class GameScreen {
 
     private void labelClicked(MouseEvent e) {
         System.out.println("Current row: " + gameSave.getCurrentRow());
-        for(int i = gameSave.getCurrentRow(); i < 6; i++) {
-            for(int j = 0; j < 9; j++) {
-                labelMatrix[i][j].setBackground(Color.white);
-                if(((JLabel)e.getSource()).equals(labelMatrix[i][j])) {
-                    System.out.println(i + ", " + j);
-                    labelMatrix[i][j].setBackground(Color.blue);
-                    lastSelected = labelMatrix[i][j];
-                    selectedX = j;
-                    selectedY = i;
-                }
+        int i = gameSave.getCurrentRow();
+        for(int j = 0; j < 9; j++) {
+            labelMatrix[i][j].setBackground(Color.white);
+            if(((JLabel)e.getSource()).equals(labelMatrix[i][j])) {
+                System.out.println(i + ", " + j);
+                labelMatrix[i][j].setBackground(Color.lightGray);
+                lastSelected = labelMatrix[i][j];
+                selectedX = j;
+                selectedY = i;
             }
         }
     }
@@ -111,6 +112,12 @@ public class GameScreen {
         if(lastSelected != null && selectedY == gameSave.getCurrentRow()) {
             lastSelected.setText("+");
         }
+        if(selectedX < gameSave.getEquation().length() - 1) {
+            lastSelected.setBackground(Color.white);
+            selectedX++;
+            lastSelected = labelMatrix[selectedY][selectedX];
+            lastSelected.setBackground(Color.lightGray);
+        }
     }
 
     private void button11(ActionEvent e) {
@@ -120,6 +127,12 @@ public class GameScreen {
     private void minus(ActionEvent e) {
         if(lastSelected != null && selectedY == gameSave.getCurrentRow()) {
             lastSelected.setText("-");
+        }
+        if(selectedX < gameSave.getEquation().length() - 1) {
+            lastSelected.setBackground(Color.white);
+            selectedX++;
+            lastSelected = labelMatrix[selectedY][selectedX];
+            lastSelected.setBackground(Color.lightGray);
         }
     }
 
@@ -131,11 +144,23 @@ public class GameScreen {
         if(lastSelected != null && selectedY == gameSave.getCurrentRow()) {
             lastSelected.setText("*");
         }
+        if(selectedX < gameSave.getEquation().length() - 1) {
+            lastSelected.setBackground(Color.white);
+            selectedX++;
+            lastSelected = labelMatrix[selectedY][selectedX];
+            lastSelected.setBackground(Color.lightGray);
+        }
     }
 
     private void divide(ActionEvent e) {
         if(lastSelected != null && selectedY == gameSave.getCurrentRow()) {
             lastSelected.setText("/");
+        }
+        if(selectedX < gameSave.getEquation().length() - 1) {
+            lastSelected.setBackground(Color.white);
+            selectedX++;
+            lastSelected = labelMatrix[selectedY][selectedX];
+            lastSelected.setBackground(Color.lightGray);
         }
     }
 
@@ -143,11 +168,23 @@ public class GameScreen {
         if(lastSelected != null && selectedY == gameSave.getCurrentRow()) {
             lastSelected.setText("0");
         }
+        if(selectedX < gameSave.getEquation().length() - 1) {
+            lastSelected.setBackground(Color.white);
+            selectedX++;
+            lastSelected = labelMatrix[selectedY][selectedX];
+            lastSelected.setBackground(Color.lightGray);
+        }
     }
 
     private void button1(ActionEvent e) {
         if(lastSelected != null && selectedY == gameSave.getCurrentRow()) {
             lastSelected.setText("1");
+        }
+        if(selectedX < gameSave.getEquation().length() - 1) {
+            lastSelected.setBackground(Color.white);
+            selectedX++;
+            lastSelected = labelMatrix[selectedY][selectedX];
+            lastSelected.setBackground(Color.lightGray);
         }
     }
 
@@ -155,11 +192,23 @@ public class GameScreen {
         if(lastSelected != null && selectedY == gameSave.getCurrentRow()) {
             lastSelected.setText("2");
         }
+        if(selectedX < gameSave.getEquation().length() - 1) {
+            lastSelected.setBackground(Color.white);
+            selectedX++;
+            lastSelected = labelMatrix[selectedY][selectedX];
+            lastSelected.setBackground(Color.lightGray);
+        }
     }
 
     private void button3(ActionEvent e) {
         if(lastSelected != null && selectedY == gameSave.getCurrentRow()) {
             lastSelected.setText("3");
+        }
+        if(selectedX < gameSave.getEquation().length() - 1) {
+            lastSelected.setBackground(Color.white);
+            selectedX++;
+            lastSelected = labelMatrix[selectedY][selectedX];
+            lastSelected.setBackground(Color.lightGray);
         }
     }
 
@@ -167,11 +216,23 @@ public class GameScreen {
         if(lastSelected != null && selectedY == gameSave.getCurrentRow()) {
             lastSelected.setText("4");
         }
+        if(selectedX < gameSave.getEquation().length() - 1) {
+            lastSelected.setBackground(Color.white);
+            selectedX++;
+            lastSelected = labelMatrix[selectedY][selectedX];
+            lastSelected.setBackground(Color.lightGray);
+        }
     }
 
     private void button5(ActionEvent e) {
         if(lastSelected != null && selectedY == gameSave.getCurrentRow()) {
             lastSelected.setText("5");
+        }
+        if(selectedX < gameSave.getEquation().length() - 1) {
+            lastSelected.setBackground(Color.white);
+            selectedX++;
+            lastSelected = labelMatrix[selectedY][selectedX];
+            lastSelected.setBackground(Color.lightGray);
         }
     }
 
@@ -179,11 +240,23 @@ public class GameScreen {
         if(lastSelected != null && selectedY == gameSave.getCurrentRow()) {
             lastSelected.setText("6");
         }
+        if(selectedX < gameSave.getEquation().length() - 1) {
+            lastSelected.setBackground(Color.white);
+            selectedX++;
+            lastSelected = labelMatrix[selectedY][selectedX];
+            lastSelected.setBackground(Color.lightGray);
+        }
     }
 
     private void button7(ActionEvent e) {
         if(lastSelected != null && selectedY == gameSave.getCurrentRow()) {
             lastSelected.setText("7");
+        }
+        if(selectedX < gameSave.getEquation().length() - 1) {
+            lastSelected.setBackground(Color.white);
+            selectedX++;
+            lastSelected = labelMatrix[selectedY][selectedX];
+            lastSelected.setBackground(Color.lightGray);
         }
     }
 
@@ -191,11 +264,23 @@ public class GameScreen {
         if(lastSelected != null && selectedY == gameSave.getCurrentRow()) {
             lastSelected.setText("8");
         }
+        if(selectedX < gameSave.getEquation().length() - 1) {
+            lastSelected.setBackground(Color.white);
+            selectedX++;
+            lastSelected = labelMatrix[selectedY][selectedX];
+            lastSelected.setBackground(Color.lightGray);
+        }
     }
 
     private void button9(ActionEvent e) {
         if(lastSelected != null && selectedY == gameSave.getCurrentRow()) {
             lastSelected.setText("9");
+        }
+        if(selectedX < gameSave.getEquation().length() - 1) {
+            lastSelected.setBackground(Color.white);
+            selectedX++;
+            lastSelected = labelMatrix[selectedY][selectedX];
+            lastSelected.setBackground(Color.lightGray);
         }
     }
 
@@ -217,20 +302,21 @@ public class GameScreen {
                 end.setResizable(false);
                 end.setLocationRelativeTo(null);
                 end.setVisible(true);
+                end.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
                 //end.pack();
+                if(gameSave.getWon() == 0) {
+                    gameSave.setAverageRow(gameSave.getCurrentRow() + 1);
+                    gameSave.setAverageTime(gameSave.getTime());
+                } else {
+                    gameSave.setAverageRow((gameSave.getAverageRow() * gameSave.getWon() + gameSave.getCurrentRow() + 1) / (gameSave.getWon() + 1));
+                    gameSave.setAverageTime((gameSave.getAverageTime() * gameSave.getWon() + gameSave.getTime()) / gameSave.getWon() + 1);
+                }
                 gameSave.setLabelMatrix(new char[6][9]);
                 gameSave.setCurrentRow(0);
                 gameSave.setEquation(new EquationUtil().generateEquation());
                 gameSave.setTime(0);
                 saveFile();
                 readFile();
-                if(gameSave.getWon() == 0) {
-                    gameSave.setAverageRow(gameSave.getCurrentRow() - 1);
-                    gameSave.setAverageTime(gameSave.getTime());
-                } else {
-                    gameSave.setAverageRow((gameSave.getAverageRow() * gameSave.getWon() + gameSave.getCurrentRow() - 1) / (gameSave.getWon() + 1));
-                    gameSave.setAverageTime((gameSave.getAverageTime() * gameSave.getWon() + gameSave.getTime()) / gameSave.getWon() + 1);
-                }
                 gameSave.setWon(gameSave.getWon() + 1);
             } else if(gameSave.getCurrentRow() > 4) {
                 System.out.println("Lose");
@@ -238,6 +324,7 @@ public class GameScreen {
                 end.setResizable(false);
                 end.setLocationRelativeTo(null);
                 end.setVisible(true);
+                end.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
                 end.pack();
                 gameSave.setLabelMatrix(new char[6][9]);
                 gameSave.setCurrentRow(0);
@@ -254,6 +341,28 @@ public class GameScreen {
     private void equal(ActionEvent e) {
         if(lastSelected != null && selectedY == gameSave.getCurrentRow()) {
             lastSelected.setText("=");
+        }
+        lastSelected.setBackground(Color.white);
+        selectedX++;
+        lastSelected = labelMatrix[selectedY][selectedX];
+        lastSelected.setBackground(Color.lightGray);
+    }
+
+    private void delete(ActionEvent e) {
+        if(lastSelected != null && lastSelected.getText().equals("") && selectedX > 0) {
+            lastSelected.setBackground(Color.white);
+            selectedX--;
+            lastSelected = labelMatrix[selectedY][selectedX];
+            lastSelected.setText("");
+            lastSelected.setBackground(Color.lightGray);
+        } else if(lastSelected != null && selectedX > 0) {
+            lastSelected.setBackground(Color.white);
+            lastSelected.setText("");
+            selectedX--;
+            lastSelected = labelMatrix[selectedY][selectedX];
+            lastSelected.setBackground(Color.lightGray);
+        } else if(lastSelected != null) {
+            lastSelected.setText("");
         }
     }
 
@@ -282,6 +391,7 @@ public class GameScreen {
         label55 = new JLabel();
         labels = new JPanel();
         timer = new JLabel();
+        deleteButton = new JButton();
 
         //======== panel ========
         {
@@ -300,7 +410,6 @@ public class GameScreen {
                 button0.setText("0");
                 button0.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
                 button0.addActionListener(e -> {
-			button1(e);
 			button0(e);
 		});
 
@@ -408,6 +517,10 @@ public class GameScreen {
                 //---- timer ----
                 timer.setHorizontalAlignment(SwingConstants.CENTER);
 
+                //---- deleteButton ----
+                deleteButton.setText("<=");
+                deleteButton.addActionListener(e -> delete(e));
+
                 GroupLayout actionsLayout = new GroupLayout(actions);
                 actions.setLayout(actionsLayout);
                 actionsLayout.setHorizontalGroup(
@@ -419,7 +532,7 @@ public class GameScreen {
                                     .addGap(6, 6, 6)
                                     .addComponent(label55))
                                 .addGroup(actionsLayout.createSequentialGroup()
-                                    .addGroup(actionsLayout.createParallelGroup()
+                                    .addGroup(actionsLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
                                         .addGroup(actionsLayout.createSequentialGroup()
                                             .addComponent(button0, GroupLayout.PREFERRED_SIZE, 75, GroupLayout.PREFERRED_SIZE)
                                             .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
@@ -437,7 +550,8 @@ public class GameScreen {
                                             .addGap(6, 6, 6)
                                             .addComponent(button7, GroupLayout.PREFERRED_SIZE, 75, GroupLayout.PREFERRED_SIZE)
                                             .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(button8, GroupLayout.PREFERRED_SIZE, 75, GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(button8, GroupLayout.PREFERRED_SIZE, 75, GroupLayout.PREFERRED_SIZE)
+                                            .addGap(6, 6, 6))
                                         .addGroup(actionsLayout.createSequentialGroup()
                                             .addComponent(plusButton, GroupLayout.PREFERRED_SIZE, 75, GroupLayout.PREFERRED_SIZE)
                                             .addGap(6, 6, 6)
@@ -448,11 +562,13 @@ public class GameScreen {
                                             .addComponent(divideButton, GroupLayout.PREFERRED_SIZE, 75, GroupLayout.PREFERRED_SIZE)
                                             .addGap(6, 6, 6)
                                             .addComponent(equalButton, GroupLayout.PREFERRED_SIZE, 75, GroupLayout.PREFERRED_SIZE)
-                                            .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(deleteButton, GroupLayout.PREFERRED_SIZE, 72, GroupLayout.PREFERRED_SIZE)
+                                            .addGap(18, 18, 18)
                                             .addComponent(guessButton, GroupLayout.PREFERRED_SIZE, 92, GroupLayout.PREFERRED_SIZE)
                                             .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                                            .addComponent(exitButton, GroupLayout.PREFERRED_SIZE, 75, GroupLayout.PREFERRED_SIZE)))
-                                    .addGap(6, 6, 6)
+                                            .addComponent(exitButton, GroupLayout.PREFERRED_SIZE, 75, GroupLayout.PREFERRED_SIZE)
+                                            .addGap(54, 54, 54)))
                                     .addGroup(actionsLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
                                         .addGroup(actionsLayout.createSequentialGroup()
                                             .addGap(6, 6, 6)
@@ -486,9 +602,10 @@ public class GameScreen {
                                 .addComponent(divideButton, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE)
                                 .addGroup(actionsLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                                     .addComponent(equalButton, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(guessButton, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(timer, GroupLayout.PREFERRED_SIZE, 65, GroupLayout.PREFERRED_SIZE)
                                     .addComponent(exitButton, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(timer, GroupLayout.PREFERRED_SIZE, 65, GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(guessButton, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(deleteButton, GroupLayout.PREFERRED_SIZE, 65, GroupLayout.PREFERRED_SIZE)))
                             .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(label55))
                 );
@@ -537,6 +654,7 @@ public class GameScreen {
     private JLabel label55;
     private JPanel labels;
     private JLabel timer;
+    private JButton deleteButton;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 
     public JPanel getPanel() {
