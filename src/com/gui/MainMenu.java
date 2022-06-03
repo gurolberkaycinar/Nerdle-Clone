@@ -4,6 +4,8 @@
 
 package com.gui;
 
+import com.util.EquationUtil;
+
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
@@ -11,8 +13,7 @@ import javax.swing.GroupLayout;
 import javax.swing.border.*;
 import javax.swing.event.*;
 
-import static com.app.App.gameSave;
-import static com.app.App.gameWindow;
+import static com.app.App.*;
 
 /**
  * @author unknown
@@ -25,6 +26,9 @@ public class MainMenu {
         lost.setText(Integer.toString(gameSave.getLost()));
         guess.setText(Integer.toString(gameSave.getAverageRow()));
         duration.setText(Integer.toString(gameSave.getAverageTime()));
+        if(gameSave.getCurrentRow() == 0) {
+            continueGame.setVisible(false);
+        }
     }
 
     private void test(ActionEvent e) {
@@ -41,6 +45,15 @@ public class MainMenu {
     }
 
     private void newGame(ActionEvent e) {
+        gameSave.setLabelMatrix(new char[6][9]);
+        gameSave.setCurrentRow(0);
+        gameSave.setEquation(new EquationUtil().generateEquation());
+        saveFile();
+        readFile();
+        gameWindow.changePanel("gameWindow");
+    }
+
+    private void continueGame(ActionEvent e) {
         gameWindow.changePanel("gameWindow");
     }
 
@@ -98,6 +111,7 @@ public class MainMenu {
             continueGame.setText("Continue");
             continueGame.setBackground(new Color(42, 157, 143));
             continueGame.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+            continueGame.addActionListener(e -> continueGame(e));
 
             //---- exit ----
             exit.setText("Exit");

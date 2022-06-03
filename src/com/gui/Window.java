@@ -50,7 +50,7 @@ public class Window extends JFrame {
         } else if (choice.equals("testScreen")) {
             this.setContentPane(testScreen);
         } else {
-            this.setContentPane(gameScreen);
+            this.setContentPane(new GameScreen().getPanel());
         }
         this.pack();
         this.setLocationRelativeTo(null);

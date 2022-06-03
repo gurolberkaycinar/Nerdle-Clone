@@ -31,6 +31,7 @@ public class GameScreen {
         initComponents();
         labels.setLayout(new GridLayout(6, 9));
         labelMatrix = new MatrixUtil().convertCharToLabel(gameSave.getLabelMatrix());
+        System.out.println("Current equation:" + gameSave.getEquation());
         putMatrix(gameSave.getEquation().length());
     }
 
@@ -74,6 +75,7 @@ public class GameScreen {
 
 
     private void labelClicked(MouseEvent e) {
+        System.out.println("Current row: " + gameSave.getCurrentRow());
         for(int i = gameSave.getCurrentRow(); i < 6; i++) {
             for(int j = 0; j < 9; j++) {
                 labelMatrix[i][j].setBackground(Color.white);
@@ -196,12 +198,26 @@ public class GameScreen {
         if(check && new EquationUtil().isValid(String.valueOf(new MatrixUtil().convertLabelToChar(labelMatrix[gameSave.getCurrentRow()])).substring(0, gameSave.getEquation().length()))) {
             new MatrixUtil().colorLine(labelMatrix[gameSave.getCurrentRow()]);
             System.out.println("Color");
-            gameSave.setCurrentRow(gameSave.getCurrentRow() + 1);
-            if(String.valueOf(new MatrixUtil().convertLabelToChar(labelMatrix[gameSave.getCurrentRow()])).equals(gameSave.getEquation())) {
+            if(String.valueOf(new MatrixUtil().convertLabelToChar(labelMatrix[gameSave.getCurrentRow()])).substring(0, gameSave.getEquation().length()).equals(gameSave.getEquation())) {
                 System.out.println("Win!");
-            } else if(gameSave.getCurrentRow() > 5) {
+                gameSave.setLabelMatrix(new char[6][9]);
+                gameSave.setCurrentRow(0);
+                gameSave.setEquation(new EquationUtil().generateEquation());
+                saveFile();
+                readFile();
+                // User info and back to menu
+                gameSave.setWon(gameSave.getWon() + 1);
+            } else if(gameSave.getCurrentRow() > 4) {
                 System.out.println("Lose");
+                gameSave.setLabelMatrix(new char[6][9]);
+                gameSave.setCurrentRow(0);
+                gameSave.setEquation(new EquationUtil().generateEquation());
+                saveFile();
+                readFile();
+                // User info and back to menu
+                gameSave.setLost(gameSave.getLost() + 1);
             }
+            gameSave.setCurrentRow(gameSave.getCurrentRow() + 1);
         }
     }
 
@@ -333,6 +349,7 @@ public class GameScreen {
                 //---- guessButton ----
                 guessButton.setText("Guess");
                 guessButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+                guessButton.setFont(guessButton.getFont().deriveFont(guessButton.getFont().getSize() - 8f));
                 guessButton.addActionListener(e -> {
 			button16(e);
 			guess(e);

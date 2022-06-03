@@ -112,6 +112,7 @@ new FormModel {
 					name: "guessButton"
 					"text": "Guess"
 					"cursor": #Cursor0
+					"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, -8, false )
 					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "button16", true ) )
 					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "guess", true ) )
 				} )

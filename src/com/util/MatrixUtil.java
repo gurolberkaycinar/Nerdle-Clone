@@ -46,13 +46,32 @@ public class MatrixUtil {
                 line[i].setBackground(Color.green);
             }
         }
+        int count = 0;
+        char num;
         for(int i = 0; i < gameSave.getEquation().length(); i++) {
             if(convertLabelToChar(line)[i] != gameSave.getEquation().charAt(i)) {
-                for(int j = 0; j < 9; j++) {
-                    if(i != j && convertLabelToChar(line)[i] != gameSave.getEquation().charAt(i) && convertLabelToChar(line)[i] == gameSave.getEquation().charAt(j)) {
+                num = convertLabelToChar(line)[i];
+                count = 0;
+                for(int j = 0; j < gameSave.getEquation().length(); j++) {
+                    if(i != j && convertLabelToChar(line)[i] != gameSave.getEquation().charAt(i) && convertLabelToChar(line)[i] == gameSave.getEquation().charAt(j) && convertLabelToChar(line)[j] != gameSave.getEquation().charAt(j)) {
                         line[i].setBackground(Color.yellow);
                     }
+
+                    /*
+                    if(i != j && convertLabelToChar(line)[i] != gameSave.getEquation().charAt(i)) {
+                        count++;
+                    }
+                    */
                 }
+                /*
+                for(int j = 0; j < gameSave.getEquation().length(); i++) {
+                    if(convertLabelToChar(line)[j] == num && count > 0) {
+                        count--;
+                        line[j].setBackground(Color.yellow);
+                    }
+                }
+
+                 */
             }
         }
     }

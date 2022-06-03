@@ -43,6 +43,8 @@ public class EquationUtil {
     public boolean isValid(String str) {
         boolean hasOperand = false;
 
+        System.out.println("checked string: " + str);
+
         // Size
         if(str.length() < 7 || str.length() > 9) {
             System.out.println("Length invalid");
@@ -66,6 +68,7 @@ public class EquationUtil {
 
         if(!((arr[equalIndex + 1] >= '1' && arr[equalIndex + 1] <= '9') || arr[equalIndex + 1] == '-') || !(arr[str.length() - 1] >= '0' && arr[str.length() - 1] <= '9')) {
             System.out.println("Illegal start or finish after = 2");
+            System.out.println("str legth: " + str.length());
             return false;
         }
 
@@ -79,7 +82,7 @@ public class EquationUtil {
                 return false;
             }
 
-            if(i < str.length() - 1 && arr[i] == '0' && (arr[i + 1] >= '0' && arr[i + 1] <= '9')) {
+            if((i < str.length() - 1 && arr[i] == '0') && (arr[i + 1] >= '0' && arr[i + 1] <= '9') && (i > 0 && (arr[i - 1] < '0'  || arr[i - 1] > '9'))) {
                 System.out.println("Leading 0");
                 return false;
             }
@@ -105,7 +108,6 @@ public class EquationUtil {
         int i;
         int sum = 0;
         for(i = 0; i < arr.length ; i++) {
-            //System.out.println(new String(arr) + " - i: " + i + " - sum: " + sum + " - tmp: " + new String(tmp) + " - size: " + tmp.length);
             if(i + 1 < arr.length && (arr[i+1] >= '0' && arr[i+1] <= '9')){
                     if(arr[i] < '0' || arr[i] > '9') {
                         tmp = new String(arr).substring(j, i).toCharArray();
