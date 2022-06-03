@@ -303,13 +303,14 @@ public class GameScreen {
                 end.setLocationRelativeTo(null);
                 end.setVisible(true);
                 end.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-                //end.pack();
+                gameSave.setTime(seconds);
                 if(gameSave.getWon() == 0) {
                     gameSave.setAverageRow(gameSave.getCurrentRow() + 1);
+                    System.out.println("Time: " + gameSave.getTime());
                     gameSave.setAverageTime(gameSave.getTime());
                 } else {
                     gameSave.setAverageRow((gameSave.getAverageRow() * gameSave.getWon() + gameSave.getCurrentRow() + 1) / (gameSave.getWon() + 1));
-                    gameSave.setAverageTime((gameSave.getAverageTime() * gameSave.getWon() + gameSave.getTime()) / gameSave.getWon() + 1);
+                    gameSave.setAverageTime((gameSave.getAverageTime() * (double) gameSave.getWon() + gameSave.getTime()) / ((double) gameSave.getWon() + 1));
                 }
                 gameSave.setLabelMatrix(new char[6][9]);
                 gameSave.setCurrentRow(0);
@@ -320,12 +321,12 @@ public class GameScreen {
                 gameSave.setWon(gameSave.getWon() + 1);
             } else if(gameSave.getCurrentRow() > 4) {
                 System.out.println("Lose");
-                JFrame end = new End("You lose.\nCorrect Answer: " + gameSave.getEquation());
+                JFrame end = new End("Correct answer was: " + gameSave.getEquation());
+                end.setSize(800, 600);
                 end.setResizable(false);
                 end.setLocationRelativeTo(null);
                 end.setVisible(true);
                 end.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-                end.pack();
                 gameSave.setLabelMatrix(new char[6][9]);
                 gameSave.setCurrentRow(0);
                 gameSave.setEquation(new EquationUtil().generateEquation());
@@ -489,7 +490,6 @@ public class GameScreen {
                 //---- guessButton ----
                 guessButton.setText("Guess");
                 guessButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-                guessButton.setFont(guessButton.getFont().deriveFont(guessButton.getFont().getSize() - 8f));
                 guessButton.addActionListener(e -> {
 			button16(e);
 			guess(e);
@@ -529,10 +529,29 @@ public class GameScreen {
                             .addGap(33, 33, 33)
                             .addGroup(actionsLayout.createParallelGroup()
                                 .addGroup(actionsLayout.createSequentialGroup()
+                                    .addComponent(plusButton, GroupLayout.PREFERRED_SIZE, 75, GroupLayout.PREFERRED_SIZE)
                                     .addGap(6, 6, 6)
-                                    .addComponent(label55))
+                                    .addComponent(minusButton, GroupLayout.PREFERRED_SIZE, 75, GroupLayout.PREFERRED_SIZE)
+                                    .addGap(6, 6, 6)
+                                    .addComponent(multiplyButton, GroupLayout.PREFERRED_SIZE, 75, GroupLayout.PREFERRED_SIZE)
+                                    .addGap(6, 6, 6)
+                                    .addComponent(divideButton, GroupLayout.PREFERRED_SIZE, 75, GroupLayout.PREFERRED_SIZE)
+                                    .addGap(6, 6, 6)
+                                    .addComponent(equalButton, GroupLayout.PREFERRED_SIZE, 75, GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(deleteButton, GroupLayout.PREFERRED_SIZE, 72, GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(guessButton, GroupLayout.PREFERRED_SIZE, 92, GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(exitButton, GroupLayout.PREFERRED_SIZE, 144, GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(timer, GroupLayout.PREFERRED_SIZE, 69, GroupLayout.PREFERRED_SIZE)
+                                    .addContainerGap(67, Short.MAX_VALUE))
                                 .addGroup(actionsLayout.createSequentialGroup()
-                                    .addGroup(actionsLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(actionsLayout.createParallelGroup()
+                                        .addGroup(actionsLayout.createSequentialGroup()
+                                            .addGap(6, 6, 6)
+                                            .addComponent(label55))
                                         .addGroup(actionsLayout.createSequentialGroup()
                                             .addComponent(button0, GroupLayout.PREFERRED_SIZE, 75, GroupLayout.PREFERRED_SIZE)
                                             .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
@@ -551,30 +570,9 @@ public class GameScreen {
                                             .addComponent(button7, GroupLayout.PREFERRED_SIZE, 75, GroupLayout.PREFERRED_SIZE)
                                             .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                                             .addComponent(button8, GroupLayout.PREFERRED_SIZE, 75, GroupLayout.PREFERRED_SIZE)
-                                            .addGap(6, 6, 6))
-                                        .addGroup(actionsLayout.createSequentialGroup()
-                                            .addComponent(plusButton, GroupLayout.PREFERRED_SIZE, 75, GroupLayout.PREFERRED_SIZE)
-                                            .addGap(6, 6, 6)
-                                            .addComponent(minusButton, GroupLayout.PREFERRED_SIZE, 75, GroupLayout.PREFERRED_SIZE)
-                                            .addGap(6, 6, 6)
-                                            .addComponent(multiplyButton, GroupLayout.PREFERRED_SIZE, 75, GroupLayout.PREFERRED_SIZE)
-                                            .addGap(6, 6, 6)
-                                            .addComponent(divideButton, GroupLayout.PREFERRED_SIZE, 75, GroupLayout.PREFERRED_SIZE)
-                                            .addGap(6, 6, 6)
-                                            .addComponent(equalButton, GroupLayout.PREFERRED_SIZE, 75, GroupLayout.PREFERRED_SIZE)
-                                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(deleteButton, GroupLayout.PREFERRED_SIZE, 72, GroupLayout.PREFERRED_SIZE)
-                                            .addGap(18, 18, 18)
-                                            .addComponent(guessButton, GroupLayout.PREFERRED_SIZE, 92, GroupLayout.PREFERRED_SIZE)
-                                            .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                                            .addComponent(exitButton, GroupLayout.PREFERRED_SIZE, 75, GroupLayout.PREFERRED_SIZE)
-                                            .addGap(54, 54, 54)))
-                                    .addGroup(actionsLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
-                                        .addGroup(actionsLayout.createSequentialGroup()
-                                            .addGap(6, 6, 6)
-                                            .addComponent(timer, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                        .addComponent(button9, GroupLayout.PREFERRED_SIZE, 75, GroupLayout.PREFERRED_SIZE))))
-                            .addContainerGap(63, Short.MAX_VALUE))
+                                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(button9, GroupLayout.PREFERRED_SIZE, 75, GroupLayout.PREFERRED_SIZE)))
+                                    .addContainerGap(63, Short.MAX_VALUE))))
                         .addComponent(labels, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 );
                 actionsLayout.setVerticalGroup(
@@ -585,8 +583,9 @@ public class GameScreen {
                             .addGroup(actionsLayout.createParallelGroup()
                                 .addComponent(button6, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE)
                                 .addComponent(button7, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE)
-                                .addComponent(button8, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE)
-                                .addComponent(button9, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE)
+                                .addGroup(actionsLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                    .addComponent(button8, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(button9, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE))
                                 .addGroup(actionsLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                                     .addComponent(button0, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE)
                                     .addComponent(button1, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE))
@@ -602,10 +601,10 @@ public class GameScreen {
                                 .addComponent(divideButton, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE)
                                 .addGroup(actionsLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                                     .addComponent(equalButton, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(timer, GroupLayout.PREFERRED_SIZE, 65, GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(deleteButton, GroupLayout.PREFERRED_SIZE, 65, GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(guessButton, GroupLayout.PREFERRED_SIZE, 65, GroupLayout.PREFERRED_SIZE)
                                     .addComponent(exitButton, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(guessButton, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(deleteButton, GroupLayout.PREFERRED_SIZE, 65, GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(timer, GroupLayout.PREFERRED_SIZE, 65, GroupLayout.PREFERRED_SIZE)))
                             .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(label55))
                 );

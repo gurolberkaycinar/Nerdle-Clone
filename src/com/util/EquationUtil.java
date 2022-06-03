@@ -27,12 +27,10 @@ public class EquationUtil {
             rightSide = Integer.toString(calculateEquation(new String(arr).substring(0, equalPos + 1)));
             str = new String(arr).substring(0, equalPos + 1);
             str += '=' + rightSide;
-            System.out.println("==============");
-            System.out.println(str);
-            counter++;
+
         } while(!isValid(str));
         System.out.println("==============");
-        System.out.println("Took " + counter + " tries ");
+        System.out.println(str);
         System.out.println("==============");
         return str;
     }
@@ -43,11 +41,9 @@ public class EquationUtil {
     public boolean isValid(String str) {
         boolean hasOperand = false;
 
-        System.out.println("checked string: " + str);
-
         // Size
         if(str.length() < 7 || str.length() > 9) {
-            System.out.println("Length invalid");
+            //System.out.println("Length invalid");
             return false;
         }
 
@@ -55,35 +51,34 @@ public class EquationUtil {
 
         // Has 1' ='
         if(equalIndex == -1 ||equalIndex != str.lastIndexOf('=') || equalIndex == str.length() - 1 || equalIndex == 0) {
-            System.out.println("Invalid =");
+            //System.out.println("Invalid =");
             return false;
         }
 
         char[] arr = str.toCharArray();
 
         if(!(arr[0] >= '1' && arr[0] <= '9') || !(arr[equalIndex - 1] >= '0' && arr[equalIndex - 1] <= '9')) {
-            System.out.println("Illegal start or finish before = 1");
+            //System.out.println("Illegal start or finish before = 1");
             return false;
         }
 
         if(!((arr[equalIndex + 1] >= '1' && arr[equalIndex + 1] <= '9') || arr[equalIndex + 1] == '-') || !(arr[str.length() - 1] >= '0' && arr[str.length() - 1] <= '9')) {
-            System.out.println("Illegal start or finish after = 2");
-            System.out.println("str legth: " + str.length());
+            //System.out.println("Illegal start or finish after = 2");
             return false;
         }
 
         for(int i = 0; i < str.length(); i++) {
             if((arr[i] < '0' || arr[i] > '9') && (arr[i + 1] < '0' || arr[i + 1] > '9') && i < equalIndex) {
-                System.out.println("2 operands in a row");
+                //System.out.println("2 operands in a row");
                 return false;
             }
             if(arr[i] == '0' && arr[i - 1] == '/') {
-                System.out.println("Divie by 0");
+                //System.out.println("Divie by 0");
                 return false;
             }
 
             if((i < str.length() - 1 && arr[i] == '0') && (arr[i + 1] >= '0' && arr[i + 1] <= '9') && (i > 0 && (arr[i - 1] < '0'  || arr[i - 1] > '9'))) {
-                System.out.println("Leading 0");
+                //System.out.println("Leading 0");
                 return false;
             }
 
@@ -93,7 +88,7 @@ public class EquationUtil {
         }
 
         if(calculateEquation(str.substring(0, equalIndex)) != calculateEquation(str.substring(equalIndex + 1, str.length()))) {
-            System.out.println("left and right side of = are unequal");
+            //System.out.println("left and right side of = are unequal");
             return false;
         }
 

@@ -97,14 +97,16 @@ public class MainMenu {
             Title.setFont(Title.getFont().deriveFont(Title.getFont().getSize() + 32f));
             Title.setHorizontalAlignment(SwingConstants.CENTER);
             Title.setBackground(new Color(60, 108, 186));
+            Title.setForeground(new Color(204, 255, 255));
 
             //---- label1 ----
             label1.setText("20011009 - G\u00fcrol Berkay \u00c7\u0131nar");
+            label1.setForeground(new Color(204, 255, 255));
 
             //---- newGame ----
             newGame.setText("New Game");
             newGame.setBackground(new Color(42, 157, 143));
-            newGame.setForeground(new Color(255, 51, 51));
+            newGame.setForeground(new Color(204, 255, 255));
             newGame.setBorder(new BevelBorder(BevelBorder.RAISED, new Color(42, 157, 143), null, null, null));
             newGame.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
             newGame.addActionListener(e -> newGame(e));
@@ -113,53 +115,67 @@ public class MainMenu {
             continueGame.setText("Continue");
             continueGame.setBackground(new Color(42, 157, 143));
             continueGame.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+            continueGame.setForeground(new Color(204, 255, 255));
             continueGame.addActionListener(e -> continueGame(e));
 
             //---- exit ----
             exit.setText("Exit");
             exit.setBackground(new Color(42, 157, 143));
             exit.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+            exit.setForeground(new Color(204, 255, 255));
             exit.addActionListener(e -> exit(e));
 
             //---- label2 ----
             label2.setText("Stats:");
+            label2.setForeground(new Color(204, 255, 255));
 
             //---- test ----
             test.setText("Test");
             test.setFont(test.getFont().deriveFont(test.getFont().getSize() + 5f));
             test.setBackground(new Color(42, 157, 143));
             test.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+            test.setForeground(new Color(204, 255, 255));
             test.addActionListener(e -> test(e));
 
             //---- label3 ----
             label3.setText("Games left unfinished: ");
+            label3.setForeground(new Color(204, 255, 255));
 
             //---- label4 ----
             label4.setText("Games lost: ");
+            label4.setForeground(new Color(204, 255, 255));
 
             //---- label5 ----
             label5.setText("Games won: ");
+            label5.setForeground(new Color(204, 255, 255));
 
             //---- label6 ----
             label6.setText("Average guesses for a win: ");
+            label6.setForeground(new Color(204, 255, 255));
 
             //---- label7 ----
             label7.setText("Average duration of a win: ");
+            label7.setForeground(new Color(204, 255, 255));
 
             //---- unfinished ----
             unfinished.setText("text");
+            unfinished.setForeground(new Color(204, 255, 255));
 
             //---- lost ----
             lost.setText("text");
+            lost.setForeground(new Color(204, 255, 255));
 
             //---- won ----
             won.setText("text");
+            won.setForeground(new Color(204, 255, 255));
 
             //---- guess ----
             guess.setText("text");
+            guess.setForeground(new Color(204, 255, 255));
 
             //---- duration ----
             duration.setText("text");
+            duration.setForeground(new Color(204, 255, 255));
 
             GroupLayout panelLayout = new GroupLayout(panel);
             panel.setLayout(panelLayout);

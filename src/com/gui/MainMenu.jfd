@@ -21,16 +21,18 @@ new FormModel {
 				"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 32, false )
 				"horizontalAlignment": 0
 				"background": new java.awt.Color( 60, 108, 186, 255 )
+				"foreground": new java.awt.Color( 204, 255, 255, 255 )
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "label1"
 				"text": "20011009 - Gürol Berkay Çınar"
+				"foreground": new java.awt.Color( 204, 255, 255, 255 )
 			} )
 			add( new FormComponent( "javax.swing.JButton" ) {
 				name: "newGame"
 				"text": "New Game"
 				"background": new java.awt.Color( 42, 157, 143, 255 )
-				"foreground": new java.awt.Color( 255, 51, 51, 255 )
+				"foreground": new java.awt.Color( 204, 255, 255, 255 )
 				"border": new javax.swing.border.BevelBorder( 0, new java.awt.Color( 42, 157, 143, 255 ), null, null, null )
 				"cursor": &Cursor0 new java.awt.Cursor( 12 )
 				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "newGame", true ) )
@@ -40,6 +42,7 @@ new FormModel {
 				"text": "Continue"
 				"background": new java.awt.Color( 42, 157, 143, 255 )
 				"cursor": #Cursor0
+				"foreground": &Color0 new java.awt.Color( 204, 255, 255, 255 )
 				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "continueGame", true ) )
 			} )
 			add( new FormComponent( "javax.swing.JButton" ) {
@@ -47,11 +50,13 @@ new FormModel {
 				"text": "Exit"
 				"background": new java.awt.Color( 42, 157, 143, 255 )
 				"cursor": #Cursor0
+				"foreground": #Color0
 				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "exit", true ) )
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "label2"
 				"text": "Stats:"
+				"foreground": new java.awt.Color( 204, 255, 255, 255 )
 			} )
 			add( new FormComponent( "javax.swing.JButton" ) {
 				name: "test"
@@ -59,47 +64,58 @@ new FormModel {
 				"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 5, false )
 				"background": new java.awt.Color( 42, 157, 143, 255 )
 				"cursor": #Cursor0
+				"foreground": new java.awt.Color( 204, 255, 255, 255 )
 				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "test", true ) )
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "label3"
 				"text": "Games left unfinished: "
+				"foreground": &Color1 new java.awt.Color( 204, 255, 255, 255 )
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "label4"
 				"text": "Games lost: "
+				"foreground": #Color1
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "label5"
 				"text": "Games won: "
+				"foreground": #Color1
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "label6"
 				"text": "Average guesses for a win: "
+				"foreground": #Color1
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "label7"
 				"text": "Average duration of a win: "
+				"foreground": #Color1
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "unfinished"
 				"text": "text"
+				"foreground": &Color2 new java.awt.Color( 204, 255, 255, 255 )
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "lost"
 				"text": "text"
+				"foreground": #Color2
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "won"
 				"text": "text"
+				"foreground": #Color2
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "guess"
 				"text": "text"
+				"foreground": #Color2
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "duration"
 				"text": "text"
+				"foreground": #Color2
 			} )
 		}, new FormLayoutConstraints( null ) {
 			"location": new java.awt.Point( 0, 0 )

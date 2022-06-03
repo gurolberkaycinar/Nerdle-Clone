@@ -7,7 +7,7 @@ new FormModel {
 			name: "this"
 			add( new FormComponent( "javax.swing.JButton" ) {
 				name: "button1"
-				"text": "text"
+				"text": "Return to Main Menu"
 				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "button1", true ) )
 			}, new FormLayoutConstraints( class java.lang.String ) {
 				"value": "South"

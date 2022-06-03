@@ -21,7 +21,8 @@ import static com.app.App.gameWindow;
 public class End extends JFrame {
     public End(String text) {
         initComponents();
-        JLabel label = new JLabel(text);
+        JLabel label = new JLabel(text, SwingConstants.CENTER);
+        label.setFont(new Font("Ubuntu", Font.PLAIN, 30));
         label.setVisible(true);
         label.setSize(200, 100);
         add(label);
@@ -45,7 +46,7 @@ public class End extends JFrame {
         contentPane.setLayout(new BorderLayout());
 
         //---- button1 ----
-        button1.setText("text");
+        button1.setText("Return to Main Menu");
         button1.addActionListener(e -> button1(e));
         contentPane.add(button1, BorderLayout.SOUTH);
         pack();
