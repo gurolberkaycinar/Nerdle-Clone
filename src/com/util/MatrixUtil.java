@@ -34,6 +34,7 @@ public class MatrixUtil {
                 labelMatrix[i][j].setOpaque(true);
                 labelMatrix[i][j].setBackground(Color.white);
                 labelMatrix[i][j].setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+                labelMatrix[i][j].setHorizontalAlignment(SwingConstants.CENTER);
             }
         }
         return labelMatrix;

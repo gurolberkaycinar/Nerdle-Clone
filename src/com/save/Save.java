@@ -9,8 +9,10 @@ public class Save implements java.io.Serializable {
     private int unfinished;
     private int lost;
     private int won;
-    private int averageRow;
-    private int averageTime;
+    private double averageRow;
+    private double averageTime;
+
+    private double time;
 
     private String equation = new String();
     public Save() {
@@ -57,19 +59,19 @@ public class Save implements java.io.Serializable {
         this.won = won;
     }
 
-    public int getAverageRow() {
+    public double getAverageRow() {
         return averageRow;
     }
 
-    public void setAverageRow(int averageRow) {
+    public void setAverageRow(double averageRow) {
         this.averageRow = averageRow;
     }
 
-    public int getAverageTime() {
+    public double getAverageTime() {
         return averageTime;
     }
 
-    public void setAverageTime(int averageTime) {
+    public void setAverageTime(double averageTime) {
         this.averageTime = averageTime;
     }
 
@@ -80,6 +82,15 @@ public class Save implements java.io.Serializable {
     public void setEquation(String equation) {
         this.equation = equation;
     }
+
+    public double getTime() {
+        return time;
+    }
+
+    public void setTime(double time) {
+        this.time = time;
+    }
+
 }
 
 

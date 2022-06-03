@@ -27,12 +27,23 @@ public class GameScreen {
     private static int selectedX;
     private static int selectedY;
 
+    private int seconds;
+
     public GameScreen() {
         initComponents();
         labels.setLayout(new GridLayout(6, 9));
         labelMatrix = new MatrixUtil().convertCharToLabel(gameSave.getLabelMatrix());
         System.out.println("Current equation:" + gameSave.getEquation());
         putMatrix(gameSave.getEquation().length());
+        seconds = (int) gameSave.getTime();
+        Timer t = new Timer(1000, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+               timer.setText(String.valueOf(seconds));
+               seconds++;
+            }
+        });
+        t.start();
     }
 
     public void putMatrix(int digitCount) {
@@ -67,6 +78,7 @@ public class GameScreen {
     private void exit(ActionEvent e) {
         gameSave.setUnfinished(gameSave.getUnfinished() + 1);
         gameSave.setLabelMatrix(new MatrixUtil().convertLabelToChar(labelMatrix));
+        gameSave.setTime((double) seconds);
         System.out.println("Saving " + gameSave.getUnfinished());
         saveFile();
         gameWindow.changePanel("mainMenu");
@@ -200,21 +212,39 @@ public class GameScreen {
             System.out.println("Color");
             if(String.valueOf(new MatrixUtil().convertLabelToChar(labelMatrix[gameSave.getCurrentRow()])).substring(0, gameSave.getEquation().length()).equals(gameSave.getEquation())) {
                 System.out.println("Win!");
+                JFrame end = new End("You Win!");
+                end.setSize(400, 300);
+                end.setResizable(false);
+                end.setLocationRelativeTo(null);
+                end.setVisible(true);
+                //end.pack();
                 gameSave.setLabelMatrix(new char[6][9]);
                 gameSave.setCurrentRow(0);
                 gameSave.setEquation(new EquationUtil().generateEquation());
+                gameSave.setTime(0);
                 saveFile();
                 readFile();
-                // User info and back to menu
+                if(gameSave.getWon() == 0) {
+                    gameSave.setAverageRow(gameSave.getCurrentRow() - 1);
+                    gameSave.setAverageTime(gameSave.getTime());
+                } else {
+                    gameSave.setAverageRow((gameSave.getAverageRow() * gameSave.getWon() + gameSave.getCurrentRow() - 1) / (gameSave.getWon() + 1));
+                    gameSave.setAverageTime((gameSave.getAverageTime() * gameSave.getWon() + gameSave.getTime()) / gameSave.getWon() + 1);
+                }
                 gameSave.setWon(gameSave.getWon() + 1);
             } else if(gameSave.getCurrentRow() > 4) {
                 System.out.println("Lose");
+                JFrame end = new End("You lose.\nCorrect Answer: " + gameSave.getEquation());
+                end.setResizable(false);
+                end.setLocationRelativeTo(null);
+                end.setVisible(true);
+                end.pack();
                 gameSave.setLabelMatrix(new char[6][9]);
                 gameSave.setCurrentRow(0);
                 gameSave.setEquation(new EquationUtil().generateEquation());
+                gameSave.setTime(0);
                 saveFile();
                 readFile();
-                // User info and back to menu
                 gameSave.setLost(gameSave.getLost() + 1);
             }
             gameSave.setCurrentRow(gameSave.getCurrentRow() + 1);
@@ -251,6 +281,7 @@ public class GameScreen {
         exitButton = new JButton();
         label55 = new JLabel();
         labels = new JPanel();
+        timer = new JLabel();
 
         //======== panel ========
         {
@@ -374,6 +405,9 @@ public class GameScreen {
                     labels.setLayout(new GridLayout(6, 9));
                 }
 
+                //---- timer ----
+                timer.setHorizontalAlignment(SwingConstants.CENTER);
+
                 GroupLayout actionsLayout = new GroupLayout(actions);
                 actions.setLayout(actionsLayout);
                 actionsLayout.setHorizontalGroup(
@@ -382,44 +416,50 @@ public class GameScreen {
                             .addGap(33, 33, 33)
                             .addGroup(actionsLayout.createParallelGroup()
                                 .addGroup(actionsLayout.createSequentialGroup()
-                                    .addComponent(plusButton, GroupLayout.PREFERRED_SIZE, 75, GroupLayout.PREFERRED_SIZE)
-                                    .addGap(6, 6, 6)
-                                    .addComponent(minusButton, GroupLayout.PREFERRED_SIZE, 75, GroupLayout.PREFERRED_SIZE)
-                                    .addGap(6, 6, 6)
-                                    .addComponent(multiplyButton, GroupLayout.PREFERRED_SIZE, 75, GroupLayout.PREFERRED_SIZE)
-                                    .addGap(6, 6, 6)
-                                    .addComponent(divideButton, GroupLayout.PREFERRED_SIZE, 75, GroupLayout.PREFERRED_SIZE)
-                                    .addGap(6, 6, 6)
-                                    .addComponent(equalButton, GroupLayout.PREFERRED_SIZE, 75, GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(guessButton, GroupLayout.PREFERRED_SIZE, 75, GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(exitButton, GroupLayout.PREFERRED_SIZE, 75, GroupLayout.PREFERRED_SIZE))
-                                .addGroup(actionsLayout.createSequentialGroup()
                                     .addGap(6, 6, 6)
                                     .addComponent(label55))
                                 .addGroup(actionsLayout.createSequentialGroup()
-                                    .addComponent(button0, GroupLayout.PREFERRED_SIZE, 75, GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(button1, GroupLayout.PREFERRED_SIZE, 75, GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(button2, GroupLayout.PREFERRED_SIZE, 75, GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(actionsLayout.createParallelGroup()
+                                        .addGroup(actionsLayout.createSequentialGroup()
+                                            .addComponent(button0, GroupLayout.PREFERRED_SIZE, 75, GroupLayout.PREFERRED_SIZE)
+                                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(button1, GroupLayout.PREFERRED_SIZE, 75, GroupLayout.PREFERRED_SIZE)
+                                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(button2, GroupLayout.PREFERRED_SIZE, 75, GroupLayout.PREFERRED_SIZE)
+                                            .addGap(6, 6, 6)
+                                            .addComponent(button3, GroupLayout.PREFERRED_SIZE, 75, GroupLayout.PREFERRED_SIZE)
+                                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(button4, GroupLayout.PREFERRED_SIZE, 75, GroupLayout.PREFERRED_SIZE)
+                                            .addGap(6, 6, 6)
+                                            .addComponent(button5, GroupLayout.PREFERRED_SIZE, 75, GroupLayout.PREFERRED_SIZE)
+                                            .addGap(6, 6, 6)
+                                            .addComponent(button6, GroupLayout.PREFERRED_SIZE, 75, GroupLayout.PREFERRED_SIZE)
+                                            .addGap(6, 6, 6)
+                                            .addComponent(button7, GroupLayout.PREFERRED_SIZE, 75, GroupLayout.PREFERRED_SIZE)
+                                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(button8, GroupLayout.PREFERRED_SIZE, 75, GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(actionsLayout.createSequentialGroup()
+                                            .addComponent(plusButton, GroupLayout.PREFERRED_SIZE, 75, GroupLayout.PREFERRED_SIZE)
+                                            .addGap(6, 6, 6)
+                                            .addComponent(minusButton, GroupLayout.PREFERRED_SIZE, 75, GroupLayout.PREFERRED_SIZE)
+                                            .addGap(6, 6, 6)
+                                            .addComponent(multiplyButton, GroupLayout.PREFERRED_SIZE, 75, GroupLayout.PREFERRED_SIZE)
+                                            .addGap(6, 6, 6)
+                                            .addComponent(divideButton, GroupLayout.PREFERRED_SIZE, 75, GroupLayout.PREFERRED_SIZE)
+                                            .addGap(6, 6, 6)
+                                            .addComponent(equalButton, GroupLayout.PREFERRED_SIZE, 75, GroupLayout.PREFERRED_SIZE)
+                                            .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                                            .addComponent(guessButton, GroupLayout.PREFERRED_SIZE, 92, GroupLayout.PREFERRED_SIZE)
+                                            .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                                            .addComponent(exitButton, GroupLayout.PREFERRED_SIZE, 75, GroupLayout.PREFERRED_SIZE)))
                                     .addGap(6, 6, 6)
-                                    .addComponent(button3, GroupLayout.PREFERRED_SIZE, 75, GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(button4, GroupLayout.PREFERRED_SIZE, 75, GroupLayout.PREFERRED_SIZE)
-                                    .addGap(6, 6, 6)
-                                    .addComponent(button5, GroupLayout.PREFERRED_SIZE, 75, GroupLayout.PREFERRED_SIZE)
-                                    .addGap(6, 6, 6)
-                                    .addComponent(button6, GroupLayout.PREFERRED_SIZE, 75, GroupLayout.PREFERRED_SIZE)
-                                    .addGap(6, 6, 6)
-                                    .addComponent(button7, GroupLayout.PREFERRED_SIZE, 75, GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(button8, GroupLayout.PREFERRED_SIZE, 75, GroupLayout.PREFERRED_SIZE)
-                                    .addGap(6, 6, 6)
-                                    .addComponent(button9, GroupLayout.PREFERRED_SIZE, 75, GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(actionsLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
+                                        .addGroup(actionsLayout.createSequentialGroup()
+                                            .addGap(6, 6, 6)
+                                            .addComponent(timer, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addComponent(button9, GroupLayout.PREFERRED_SIZE, 75, GroupLayout.PREFERRED_SIZE))))
                             .addContainerGap(63, Short.MAX_VALUE))
-                        .addComponent(labels, GroupLayout.DEFAULT_SIZE, 900, Short.MAX_VALUE)
+                        .addComponent(labels, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 );
                 actionsLayout.setVerticalGroup(
                     actionsLayout.createParallelGroup()
@@ -438,7 +478,7 @@ public class GameScreen {
                                 .addComponent(button3, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE)
                                 .addComponent(button4, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE)
                                 .addComponent(button5, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE))
-                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
+                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(actionsLayout.createParallelGroup()
                                 .addComponent(plusButton, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE)
                                 .addComponent(minusButton, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE)
@@ -447,7 +487,8 @@ public class GameScreen {
                                 .addGroup(actionsLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                                     .addComponent(equalButton, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE)
                                     .addComponent(guessButton, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(exitButton, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(exitButton, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(timer, GroupLayout.PREFERRED_SIZE, 65, GroupLayout.PREFERRED_SIZE)))
                             .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(label55))
                 );
@@ -495,6 +536,7 @@ public class GameScreen {
     private JButton exitButton;
     private JLabel label55;
     private JPanel labels;
+    private JLabel timer;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 
     public JPanel getPanel() {

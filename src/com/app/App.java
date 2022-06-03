@@ -48,6 +48,7 @@ public class App {
                 gameSave.setAverageRow(0);
                 gameSave.setAverageTime(0);
                 gameSave.setEquation(new EquationUtil().generateEquation());
+                gameSave.setTime(0);
                 System.out.println("CURRENT EQUATION: " + gameSave.getEquation());
                 gameSave.setLabelMatrix(new char[6][9]);
                 try {

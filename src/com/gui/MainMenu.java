@@ -24,8 +24,8 @@ public class MainMenu {
         unfinished.setText(Integer.toString(gameSave.getUnfinished()));
         won.setText(Integer.toString(gameSave.getWon()));
         lost.setText(Integer.toString(gameSave.getLost()));
-        guess.setText(Integer.toString(gameSave.getAverageRow()));
-        duration.setText(Integer.toString(gameSave.getAverageTime()));
+        guess.setText(Double.toString(gameSave.getAverageRow()));
+        duration.setText(Double.toString(gameSave.getAverageTime()));
         if(gameSave.getCurrentRow() == 0) {
             continueGame.setVisible(false);
         }
@@ -48,6 +48,7 @@ public class MainMenu {
         gameSave.setLabelMatrix(new char[6][9]);
         gameSave.setCurrentRow(0);
         gameSave.setEquation(new EquationUtil().generateEquation());
+        gameSave.setTime(0);
         saveFile();
         readFile();
         gameWindow.changePanel("gameWindow");
