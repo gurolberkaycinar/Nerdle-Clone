@@ -8,6 +8,7 @@ import com.util.EquationUtil;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.io.File;
 import javax.swing.*;
 import javax.swing.GroupLayout;
 import javax.swing.border.*;
@@ -21,6 +22,8 @@ import static com.app.App.*;
 public class MainMenu {
     public MainMenu() {
         initComponents();
+
+        // Displaying the stats
         unfinished.setText(Integer.toString(gameSave.getUnfinished()));
         won.setText(Integer.toString(gameSave.getWon()));
         lost.setText(Integer.toString(gameSave.getLost()));
@@ -46,6 +49,7 @@ public class MainMenu {
     }
 
     private void newGame(ActionEvent e) {
+        // Initializing a fresh game
         gameSave.setLabelMatrix(new char[6][9]);
         gameSave.setCurrentRow(0);
         gameSave.setEquation(new EquationUtil().generateEquation());
@@ -57,6 +61,25 @@ public class MainMenu {
 
     private void continueGame(ActionEvent e) {
         gameWindow.changePanel("gameWindow");
+    }
+
+    private void statClear(ActionEvent e) {
+        File saveFile = new File("save.dat");
+        if(saveFile.exists()) {
+            saveFile.delete();
+        }
+        gameSave.setCurrentRow(0);
+        gameSave.setUnfinished(0);
+        gameSave.setLost(0);
+        gameSave.setWon(0);
+        gameSave.setAverageRow(0);
+        gameSave.setAverageTime(0);
+        gameSave.setEquation(new EquationUtil().generateEquation());
+        gameSave.setTime(0);
+        System.out.println("CURRENT EQUATION: " + gameSave.getEquation());
+        gameSave.setLabelMatrix(new char[6][9]);
+        gameWindow.changePanel("mainMenu");
+        gameWindow.pack();
     }
 
 
@@ -81,6 +104,7 @@ public class MainMenu {
         won = new JLabel();
         guess = new JLabel();
         duration = new JLabel();
+        statClear = new JButton();
 
         //======== panel ========
         {
@@ -177,6 +201,10 @@ public class MainMenu {
             duration.setText("text");
             duration.setForeground(new Color(204, 255, 255));
 
+            //---- statClear ----
+            statClear.setText("Clear Stats");
+            statClear.addActionListener(e -> statClear(e));
+
             GroupLayout panelLayout = new GroupLayout(panel);
             panel.setLayout(panelLayout);
             panelLayout.setHorizontalGroup(
@@ -196,29 +224,31 @@ public class MainMenu {
                                         .addComponent(continueGame, GroupLayout.Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 231, Short.MAX_VALUE))
                                     .addComponent(exit, GroupLayout.PREFERRED_SIZE, 152, GroupLayout.PREFERRED_SIZE))))
                         .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(panelLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
-                            .addGroup(GroupLayout.Alignment.LEADING, panelLayout.createParallelGroup(GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(GroupLayout.Alignment.LEADING, panelLayout.createSequentialGroup()
-                                    .addComponent(label5)
-                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(won, GroupLayout.PREFERRED_SIZE, 58, GroupLayout.PREFERRED_SIZE))
-                                .addGroup(GroupLayout.Alignment.LEADING, panelLayout.createSequentialGroup()
-                                    .addComponent(label4)
-                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(lost, GroupLayout.PREFERRED_SIZE, 58, GroupLayout.PREFERRED_SIZE))
-                                .addGroup(GroupLayout.Alignment.LEADING, panelLayout.createSequentialGroup()
-                                    .addComponent(label3)
-                                    .addGap(51, 51, 51)
-                                    .addComponent(unfinished, GroupLayout.PREFERRED_SIZE, 58, GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(panelLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
-                                .addGroup(panelLayout.createSequentialGroup()
-                                    .addComponent(label6)
-                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(guess, GroupLayout.PREFERRED_SIZE, 58, GroupLayout.PREFERRED_SIZE))
-                                .addGroup(GroupLayout.Alignment.TRAILING, panelLayout.createSequentialGroup()
-                                    .addComponent(label7)
-                                    .addGap(24, 24, 24)
-                                    .addComponent(duration, GroupLayout.PREFERRED_SIZE, 58, GroupLayout.PREFERRED_SIZE))))
+                        .addGroup(panelLayout.createParallelGroup()
+                            .addGroup(GroupLayout.Alignment.TRAILING, panelLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
+                                .addGroup(GroupLayout.Alignment.LEADING, panelLayout.createParallelGroup(GroupLayout.Alignment.TRAILING, false)
+                                    .addGroup(GroupLayout.Alignment.LEADING, panelLayout.createSequentialGroup()
+                                        .addComponent(label5)
+                                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(won, GroupLayout.PREFERRED_SIZE, 58, GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(GroupLayout.Alignment.LEADING, panelLayout.createSequentialGroup()
+                                        .addComponent(label4)
+                                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(lost, GroupLayout.PREFERRED_SIZE, 58, GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(GroupLayout.Alignment.LEADING, panelLayout.createSequentialGroup()
+                                        .addComponent(label3)
+                                        .addGap(51, 51, 51)
+                                        .addComponent(unfinished, GroupLayout.PREFERRED_SIZE, 58, GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(panelLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(panelLayout.createSequentialGroup()
+                                        .addComponent(label6)
+                                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(guess, GroupLayout.PREFERRED_SIZE, 58, GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(GroupLayout.Alignment.TRAILING, panelLayout.createSequentialGroup()
+                                        .addComponent(label7)
+                                        .addGap(24, 24, 24)
+                                        .addComponent(duration, GroupLayout.PREFERRED_SIZE, 58, GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(statClear, GroupLayout.Alignment.TRAILING))
                         .addGap(142, 142, 142))
                     .addGroup(GroupLayout.Alignment.TRAILING, panelLayout.createSequentialGroup()
                         .addComponent(Title, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -264,6 +294,8 @@ public class MainMenu {
                                 .addGroup(panelLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                                     .addComponent(label7)
                                     .addComponent(duration))
+                                .addGap(18, 18, 18)
+                                .addComponent(statClear)
                                 .addContainerGap())))
             );
         }
@@ -289,6 +321,7 @@ public class MainMenu {
     private JLabel won;
     private JLabel guess;
     private JLabel duration;
+    private JButton statClear;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 
     public JPanel getPanel() {

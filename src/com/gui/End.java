@@ -19,6 +19,7 @@ import static com.app.App.gameWindow;
  * @author unknown
  */
 public class End extends JFrame {
+    // Creating a window that will be displayed when a game ends in a win or a lose
     public End(String text) {
         initComponents();
         JLabel label = new JLabel(text, SwingConstants.CENTER);

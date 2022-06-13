@@ -38,6 +38,7 @@ public class GameScreen {
         lastSelected = labelMatrix[gameSave.getCurrentRow()][0];
         lastSelected.setBackground(Color.lightGray);
         seconds = (int) gameSave.getTime();
+        // Creating the timer
         Timer t = new Timer(1000, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
@@ -48,8 +49,8 @@ public class GameScreen {
         t.start();
     }
 
+    // Initializing the game matrix
     public void putMatrix(int digitCount) {
-
         for(int i = 0; i < 6; i++) {
             for(int j = 0; j < digitCount; j++) {
                 JLabel tmpLabel = labelMatrix[i][j];
@@ -292,6 +293,7 @@ public class GameScreen {
                 System.out.println("Invalid length");
             }
         }
+        // If a row is valid this part colors it
         if(check && new EquationUtil().isValid(String.valueOf(new MatrixUtil().convertLabelToChar(labelMatrix[gameSave.getCurrentRow()])).substring(0, gameSave.getEquation().length()))) {
             new MatrixUtil().colorLine(labelMatrix[gameSave.getCurrentRow()]);
             System.out.println("Color");

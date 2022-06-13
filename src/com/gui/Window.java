@@ -44,6 +44,7 @@ public class Window extends JFrame {
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
     }
 
+    // Fucntion used to change panels
     public void changePanel(String choice) {
         if(choice.equals("mainMenu")) {
             this.setContentPane(new MainMenu().getPanel());

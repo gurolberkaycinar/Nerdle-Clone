@@ -4,8 +4,8 @@ new FormModel {
 	contentType: "form/swing"
 	root: new FormRoot {
 		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-			"$horizontalGroup": "par l {seq l {par l {comp label1:::p::p, seq l {space :71:71:p, par l {seq l {comp newGame:::p:231:p, space :p:129:p, comp label2:::p::p}, par t:l::p {comp test::l::231:x, comp continueGame::l::231:x}, comp exit::l:p:152:p}}}, space :::x, par t {par t:l::p {seq l {comp label5:::p::p, space :::x, comp won:::p:58:p}, seq l {comp label4:::p::p, space :::x, comp lost:::p:58:p}, seq l {comp label3:::p::p, space :p:51:p, comp unfinished:::p:58:p}}, par l:t::p {seq {comp label6:::p::p, space :::x, comp guess:::p:58:p}, seq t {comp label7:::p::p, space :p:24:p, comp duration:::p:58:p}}}, space :p:142:p}, seq t {comp Title:::::x, space :::p}}"
-			"$verticalGroup": "par l {seq {space :::p, comp Title:::p:91:p, par l {seq {space :::x, comp newGame:::p:90:p, space s:::p, comp continueGame:::p:88:p, space s:::p, comp test:::p:58:p, space :p:47:p, comp exit:::p:55:p, space :p:43:p, comp label1:::p::p}, seq l {space :p:103:p, comp label2:::p::p, space :p:15:p, par b {comp label3::b:p::p, comp unfinished::b:p::p}, space :::p, par b {comp label4::b:p::p, comp lost::b:p::p}, space :::p, par b {comp label5::b:p::p, comp won::b:p::p}, space :::p, par b {comp guess::b:p::p, comp label6::b:p::p}, space :::p, par b {comp label7::b:p::p, comp duration::b:p::p}, space :::x}}}}"
+			"$horizontalGroup": "par l {seq l {par l {comp label1:::p::p, seq l {space :71:71:p, par l {seq l {comp newGame:::p:231:p, space :p:129:p, comp label2:::p::p}, par t:l::p {comp test::l::231:x, comp continueGame::l::231:x}, comp exit::l:p:152:p}}}, space :::x, par l {par t:t {par t:l::p {seq l {comp label5:::p::p, space :::x, comp won:::p:58:p}, seq l {comp label4:::p::p, space :::x, comp lost:::p:58:p}, seq l {comp label3:::p::p, space :p:51:p, comp unfinished:::p:58:p}}, par l:t::p {seq {comp label6:::p::p, space :::x, comp guess:::p:58:p}, seq t {comp label7:::p::p, space :p:24:p, comp duration:::p:58:p}}}, comp statClear::t:p::p}, space :p:142:p}, seq t {comp Title:::::x, space :::p}}"
+			"$verticalGroup": "par l {seq {space :::p, comp Title:::p:91:p, par l {seq {space :::x, comp newGame:::p:90:p, space s:::p, comp continueGame:::p:88:p, space s:::p, comp test:::p:58:p, space :p:47:p, comp exit:::p:55:p, space :p:43:p, comp label1:::p::p}, seq l {space :p:103:p, comp label2:::p::p, space :p:15:p, par b {comp label3::b:p::p, comp unfinished::b:p::p}, space :::p, par b {comp label4::b:p::p, comp lost::b:p::p}, space :::p, par b {comp label5::b:p::p, comp won::b:p::p}, space :::p, par b {comp guess::b:p::p, comp label6::b:p::p}, space :::p, par b {comp label7::b:p::p, comp duration::b:p::p}, space s:::p, comp statClear:::p::p, space :::x}}}}"
 		} ) {
 			name: "panel"
 			"preferredSize": new java.awt.Dimension( 800, 560 )
@@ -116,6 +116,11 @@ new FormModel {
 				name: "duration"
 				"text": "text"
 				"foreground": #Color2
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "statClear"
+				"text": "Clear Stats"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "statClear", true ) )
 			} )
 		}, new FormLayoutConstraints( null ) {
 			"location": new java.awt.Point( 0, 0 )

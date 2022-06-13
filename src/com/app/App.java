@@ -1,9 +1,11 @@
 package com.app;
 
 import com.gui.*;
+import com.gui.Window;
 import com.save.Save;
 import com.util.EquationUtil;
 import javax.swing.*;
+import java.awt.*;
 import java.io.*;
 
 public class App {
@@ -34,6 +36,7 @@ public class App {
 
     public static void readFile() {
         File file = new File("save.dat");
+        // Checking if a save file already exists and creating one if it doesn't
         if(!file.exists()) {
             System.out.println("creating file");
             try {
@@ -58,6 +61,7 @@ public class App {
             } catch (Exception e) {
                 e.printStackTrace();
             }
+            // If a file already exists
         } else {
             System.out.println("reading");
             try {

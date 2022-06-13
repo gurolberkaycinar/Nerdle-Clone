@@ -1,6 +1,10 @@
 package com.util;
 
+
+
 public class EquationUtil {
+
+    // Generating an equation
     public String generateEquation() {
         char[] set = {'0', '1', '2' , '3', '4', '5' ,'6' ,'7', '8', '9', '+', '-', '*', '/'};
         int equalPos;
@@ -35,9 +39,7 @@ public class EquationUtil {
         return str;
     }
 
-
-
-
+    // Validating an equation
     public boolean isValid(String str) {
         boolean hasOperand = false;
 
@@ -95,6 +97,7 @@ public class EquationUtil {
         return hasOperand;
     }
 
+    // Calculating an equation
     public int calculateEquation(String str) {
         char[] arr = str.toCharArray();
         char last = '0';
